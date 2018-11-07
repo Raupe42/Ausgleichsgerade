@@ -1,0 +1,37 @@
+Ein Datensatz besteht aus:
+-Wert X
+-Wert Y
+-Wert X * Y
+-Wert X²
+-Wert Y²
+
+Datentyp: double
+
+Nur der Wert X und Y werden gespeichert, die anderen zur Laufzeit
+neu berechnet
+
+Einfaches Datenkonstrukt:
+
+double messwerte [ANZAHL] [2]
+
+Problem:
+- Anzahl der maximalen Messwerte ist
+  beschränkt
+
+Konzept: nicht alle Daten müssen gleichzeitig vorliegen
+Problem:
+- Die Rechenvorschrift benötigt die Summen der jeweiligen
+  Werte
+
+Idee:
+- Zwischenspeicherung in Datei -> sehr langsam
+- Array mit Array-Addressen -> ungeeignet, Dtane liegen weiter nur im Stack, zugirff kompliziert
+- Malloc -> gut, schnell und Daten im Stack
+- Linked-List -> gut, sehr schnell, übersichtlich, schlecht weil Dtane im Stack
+- Linked List mit Malloc:
+    Die Listen - Elemente sind über Malloc erzeugt
+    - vereint die jeweiligen Vorteile
+
+Konzept:
+- "Riesenarray" im Heap
+    Linked List stellt einen unproportionalen Aufwand dar

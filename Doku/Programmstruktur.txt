@@ -1,0 +1,21 @@
+Programmstruktur:
+- Das Programm soll in Modulweise konstruiert werden
+
+Hauptmodule:
+- Main.c
+    Allgemeines
+    Verwaltung des Programms/ der Daten 
+        Neue Daten einlesen
+        Daten ausgeben
+        Daten ändern/ löschen
+    Ein-/ Ausgaben der Konsole
+- Datensicherung.c
+    Import von Daten
+    Export von Daten
+- GeneriereDaten.c
+    Erzeugen von Messwerten ohne Benutzereingabe
+- Berechnung.c
+    Berechnen der benötigten Werte
+Optional:
+- Bild.c
+    Generierung einer grafischen Anzeige
