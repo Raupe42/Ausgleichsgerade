@@ -30,7 +30,6 @@ void printHelp()
 	printf("hier wird die Hilfe stehen... \n \n \n \n");
 
 	printf("Beliebige Taste dr"str(ü)"cken");
-	scanf();
-	while (getchar() != '\n');
+	getchar();
 	return;
 }

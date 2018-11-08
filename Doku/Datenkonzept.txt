@@ -1,4 +1,4 @@
-Ein Datensatz besteht aus:
+﻿Ein Datensatz besteht aus:
 -Wert X
 -Wert Y
 -Wert X * Y
@@ -35,3 +35,5 @@ Idee:
 Konzept:
 - "Riesenarray" im Heap
     Linked List stellt einen unproportionalen Aufwand dar
+- Zusätzlicher Char zum anzeigen, ob es sich um einen gültigen Wert handelt - 
+	ermöglicht das löschen von Werten

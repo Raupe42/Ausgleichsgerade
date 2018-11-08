@@ -1,0 +1,4 @@
+﻿  Main.c
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\main.c(91): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "messwert_t **" und "messwert_t (**)[0]" unterschiedlich
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\main.c(91): warning C4024: "messreihePruefen": unterschiedliche Typen für formalen und übergebenen Parameter 3
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
