@@ -4,8 +4,6 @@ author: Raupe
 Info:
 */
 
-#define SPEICHERRESERVE 5	//freie Messwertfelder vor realloziieren
-
 #ifndef _messdaten_t
 #define _messdaten_t
 /*
@@ -25,14 +23,3 @@ typedef struct struct_messreihe {
 } messreihe_t;
 
 #endif // !_messdaten_t
-
-
-
-#ifndef _datenverwaltung
-	#define _datenverwaltung
-
-int messreiheAllocate (long, messreihe_t *);
-
-int messreihePruefen (messreihe_t *);
-
-#endif 

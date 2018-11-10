@@ -1,3 +1,9 @@
+/*
+author: Raupe
+
+Info:
+*/
+
 
 //includes
 	//von externen Abhängigkeiten
