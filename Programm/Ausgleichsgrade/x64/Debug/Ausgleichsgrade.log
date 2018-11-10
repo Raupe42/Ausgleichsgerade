@@ -1,4 +1,6 @@
-﻿  Main.c
-c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\main.c(226): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
-c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\main.c(198): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
+﻿  datenHandling.c
+c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\datenhandling.c(61): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
+c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\datenhandling.c(33): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
+  Main.c
+  Code wird generiert...
   Ausgleichsgrade.vcxproj -> C:\Users\jensh\OneDrive\Dokumente\GitSurface\Ausgleichsgrade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

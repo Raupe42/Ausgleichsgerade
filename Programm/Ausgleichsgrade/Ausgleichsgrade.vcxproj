@@ -115,12 +115,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="datenverwaltung.c" />
+    <ClCompile Include="datenHandling.c" />
     <ClCompile Include="help.c" />
     <ClCompile Include="Main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="datenverwaltung.h" />
+    <ClInclude Include="datenHandling.h" />
     <ClInclude Include="help.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

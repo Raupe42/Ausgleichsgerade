@@ -21,7 +21,7 @@
     <ClCompile Include="help.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="datenverwaltung.c">
+    <ClCompile Include="datenHandling.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="help.h">
       <Filter>Quelldateien</Filter>
     </ClInclude>
-    <ClInclude Include="datenverwaltung.h">
+    <ClInclude Include="datenHandling.h">
       <Filter>Quelldateien</Filter>
     </ClInclude>
   </ItemGroup>
