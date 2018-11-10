@@ -1,4 +1,4 @@
 ﻿  Main.c
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\main.c(91): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "messwert_t **" und "messwert_t (**)[0]" unterschiedlich
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\main.c(91): warning C4024: "messreihePruefen": unterschiedliche Typen für formalen und übergebenen Parameter 3
-  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
+c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\main.c(226): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
+c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\main.c(198): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\OneDrive\Dokumente\GitSurface\Ausgleichsgrade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

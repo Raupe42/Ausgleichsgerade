@@ -65,11 +65,16 @@ typedef struct struct_messwert {
 	char val;
 } messwert_t;
 
+typedef struct struct_messreihe {
+	messwert_t (*messreihe)[];
+	long anzahlMesswerte;
+	long kapazitaetMessreihe;
+} messreihe_t;
 
 //Prototypen
 int menue();
-int messreiheAllocate(long anzahl, messwert_t ** p_messreihe);
-int messreihePruefen(long * p_anzahlMesswerte, long * p_kapazitaetMessreihe, messwert_t ** p_messreihe);
+int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe);
+int messreihePruefen(messreihe_t *p_messreihe);
 
 
 //MAIN
@@ -77,10 +82,10 @@ int messreihePruefen(long * p_anzahlMesswerte, long * p_kapazitaetMessreihe, mes
 int main(void)
 {
 	int funktionalitaet = -1;
-	long anzahlMesswerte = 10, kapazitaetMessreihe = 0;
-	int arr[20];
-	int * p_arr = arr;
-	messwert_t (* messreihe) [] = NULL;
+	messreihe_t messwerte;
+	messwerte.messreihe = NULL;
+	messwerte.anzahlMesswerte = 10;
+	messwerte.kapazitaetMessreihe = 0;
 	int i;
 	while (funktionalitaet != 0)
 	{
@@ -88,7 +93,7 @@ int main(void)
 		funktionalitaet = menue();
 		printf("%i \n", funktionalitaet);
 		
-		messreihePruefen(&anzahlMesswerte, &kapazitaetMessreihe, &messreihe);
+		messreihePruefen(&messwerte);
 
 		switch (funktionalitaet)
 		{
@@ -103,31 +108,30 @@ int main(void)
 			break;
 		case 3:
 
-			for (i = 0; i < anzahlMesswerte; i++)
+			for (i = 0; i < messwerte.anzahlMesswerte; i++)
 			{
-				//printf("%p, %p, %p", messreihe, *messreihe, (*messreihe + i));
-				(*messreihe+i)->x = i;
-				(*messreihe+i)->y = i * 2;
-				(*messreihe+i)->val = 1;
+				(*messwerte.messreihe + i)->x = i;
+				(*messwerte.messreihe +i)->y = i * 2;
+				(*messwerte.messreihe +i)->val = 1;
 			}
 			getchar();
 			break;
 		case 4:
 
-			for (i = 0; i < anzahlMesswerte; i++)
+			for (i = 0; i < messwerte.anzahlMesswerte; i++)
 			{
-				printf("%i:x = %g, y= %g\n",i, (*messreihe+i)->x, (*messreihe+i)->y);
+				printf("%i:x = %g, y= %g\n",i, (*messwerte.messreihe+i)->x, (*messwerte.messreihe+i)->y);
 			}
 			getchar();
 			break;
 		case 5:
-			anzahlMesswerte += 10;
+			messwerte.anzahlMesswerte += 10;
 			break;
 		case 6:
-			anzahlMesswerte += 1000000;
+			messwerte.anzahlMesswerte += 1000000;
 			break;
 		case 7:
-			anzahlMesswerte -= 1000000;
+			messwerte.anzahlMesswerte -= 1000000;
 			break;
 		case 9: //Hilfe Anzeigen
 			printHelp();
@@ -184,23 +188,25 @@ Status des Aufrufs
 1: messreihe neu initialisiert
 2: speicher realloziiert
 */
-int messreiheAllocate(long anzahl, messwert_t ** p_messreihe)
+int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 
 {
-	messwert_t *messreihe = *p_messreihe;
+	//lokal für lesabrkeit
+	messwert_t *messreihe = p_messreihe->messreihe;
+	
 	int retVal = - 1;
 
 	if (messreihe == NULL)	//malloc
 	{
-		messreihe = malloc(anzahl * sizeof( messwert_t));
+		messreihe = malloc(neueAnzahl * sizeof( messwert_t));
 		retVal= 1;
 	}
-	else if (messreihe && anzahl > 0)	//realloc
+	else if (messreihe && neueAnzahl > 0)	//realloc
 	{
-		messreihe = (messwert_t*) realloc(messreihe, anzahl * sizeof(messwert_t));
+		messreihe = (messwert_t*) realloc(messreihe, neueAnzahl * sizeof(messwert_t));
 		retVal = 2;
 	}
-	else if (messreihe && anzahl <= 0)	//free
+	else if (messreihe && neueAnzahl <= 0)	//free
 	{
 		free(messreihe);
 		retVal = 0;
@@ -211,7 +217,10 @@ int messreiheAllocate(long anzahl, messwert_t ** p_messreihe)
 		retVal = -1;
 	printf("%p", messreihe);
 
-	*p_messreihe = messreihe;
+	//*p_messreihe = messreihe;
+
+	//lokal zrück
+	p_messreihe->messreihe = messreihe;
 	return retVal;
 }
 
@@ -230,10 +239,11 @@ Rückgabewert Status:
 0: kein Fehler
 */
 
-int messreihePruefen(long * p_anzahlMesswerte, long * p_kapazitaetMessreihe, messwert_t ** p_messreihe)
+int messreihePruefen(messreihe_t *p_messreihe)
 {
-	long anzahlMesswerte = *p_anzahlMesswerte;
-	long kapazitaetMessreihe = *p_kapazitaetMessreihe;
+	//lokaldaten zur lesbarkeit
+	long anzahlMesswerte = p_messreihe->anzahlMesswerte;
+	long kapazitaetMessreihe = p_messreihe->kapazitaetMessreihe;
 	//prüfe Messreihe
 	if (kapazitaetMessreihe < anzahlMesswerte)
 	{
@@ -245,5 +255,9 @@ int messreihePruefen(long * p_anzahlMesswerte, long * p_kapazitaetMessreihe, mes
 		int state = messreiheAllocate(anzahlMesswerte + SPEICHERRESERVE, p_messreihe);
 		kapazitaetMessreihe = anzahlMesswerte + SPEICHERRESERVE;
 	}
+
+	//rückschreiben der lokaldaten
+	p_messreihe->anzahlMesswerte = anzahlMesswerte;
+	p_messreihe->kapazitaetMessreihe = kapazitaetMessreihe;
 	return 0;
 }
