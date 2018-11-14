@@ -24,25 +24,34 @@
     <ClCompile Include="datenHandling.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="datenverwaltung.c">
+    <ClCompile Include="berechnung.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="berechnung.c">
+    <ClCompile Include="datenUserInterface.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="datenImExport.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="help.h">
-      <Filter>Quelldateien</Filter>
-    </ClInclude>
-    <ClInclude Include="datenHandling.h">
-      <Filter>Quelldateien</Filter>
-    </ClInclude>
-    <ClInclude Include="datenverwaltung.h">
-      <Filter>Quelldateien</Filter>
+    <ClInclude Include="datenImExport.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="berechnung.h">
-      <Filter>Quelldateien</Filter>
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="datenHandling.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="datenUserInterface.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="help.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ioHilfen.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

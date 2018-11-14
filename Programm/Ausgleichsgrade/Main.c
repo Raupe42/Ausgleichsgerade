@@ -53,6 +53,8 @@ gcc -dM -E - </dev/null
 	//von eigenen Modulen
 #include "help.h"
 #include "datenHandling.h"
+#include "datenImExport.h"
+#include "datenUserInterface.h"
 
 //globale typedefs
 
@@ -91,8 +93,9 @@ int main(void)
 	messwerte.messreihe = NULL;
 	messwerte.anzahlMesswerte = 10;
 	messwerte.kapazitaetMessreihe = 0;
-	int i;
-	while (funktionalitaet != 0)
+	messreihe_t *p_messwerte = &messwerte;
+	int i;	//Hilfsvariable für Zählschleifen usw.
+	while (funktionalitaet != 0)		//Bedienschleife der Konsole
 	{
 		system(CLS);
 		funktionalitaet = menue();
@@ -105,23 +108,22 @@ int main(void)
 		case 0:	//Porgramm-Ende
 			break;
 		case 1:
-
+			datenEinlesen(p_messwerte);
 			break;
 		case 2:
-
+			datenAusgeben(p_messwerte);
 			break;
 		case 3:
-
-
+			datenManipulieren(p_messwerte);
 			break;
 		case 4:
-
+			datenSpeichern(p_messwerte);
 			break;
 		case 5:
-		
+			datenLaden(p_messwerte);
 			break;
 		case 6:
-		
+			//Aufruf zum ermitteln der Daten
 			break;
 		case 7:
 			printHelp();
@@ -202,9 +204,15 @@ int main(void)
 /* Verwaltung des Programmmenüs - der Benutzer wählt mit eingabe auf der Konsole
 die Funktionalitäten aus
 Der Rückgabewert ist die ausgewählte Funktionalität
-0: Ende
-1:
-2:
+(1) Daten aufnehmen
+(2) Daten ausgeben
+(3) Daten korrigieren
+(4) Daten speichern
+(5) Daten laden
+(6) Ausgleichsgerade ermitteln
+(7) Hilfe anzeigen
+(0) Ende
+(9) Debug-Modus
 */
 int menue()
 {

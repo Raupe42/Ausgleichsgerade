@@ -59,11 +59,9 @@ int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 		return -1;
 	if (!messreihe)
 		retVal = -1;
-	printf("%p", messreihe);
+	
 
-	//*p_messreihe = messreihe;
-
-	//lokal zrück
+	//lokal zrück speichern
 	p_messreihe->messreihe = messreihe;
 	return retVal;
 }

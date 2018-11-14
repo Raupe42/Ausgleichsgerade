@@ -117,15 +117,18 @@
   <ItemGroup>
     <ClCompile Include="berechnung.c" />
     <ClCompile Include="datenHandling.c" />
-    <ClCompile Include="datenverwaltung.c" />
+    <ClCompile Include="datenImExport.c" />
+    <ClCompile Include="datenUserInterface.c" />
     <ClCompile Include="help.c" />
     <ClCompile Include="Main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="berechnung.h" />
     <ClInclude Include="datenHandling.h" />
-    <ClInclude Include="datenverwaltung.h" />
+    <ClInclude Include="datenImExport.h" />
+    <ClInclude Include="datenUserInterface.h" />
     <ClInclude Include="help.h" />
+    <ClInclude Include="ioHilfen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
