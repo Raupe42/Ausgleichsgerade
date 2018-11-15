@@ -13,3 +13,8 @@ void printHelp();
 
 #endif // !_printHelp
 
+#ifndef MAIN
+#define _MAIN
+#endif // !MAIN
+
+

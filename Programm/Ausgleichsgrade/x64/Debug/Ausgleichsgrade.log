@@ -1,14 +1,4 @@
-﻿  datenHandling.c
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(65): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(39): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
-  datenImExport.c
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(34): warning C4013: "system" undefiniert; Annahme: extern mit Rückgabetyp int
-  datenUserInterface.c
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(35): warning C4013: "system" undefiniert; Annahme: extern mit Rückgabetyp int
+﻿  Main.c
+  help.c
   Code wird generiert...
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(45): warning C4716: "datenEinlesen": Muss einen Wert zurückgeben
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(38): warning C4716: "datenAusgeben": Muss einen Wert zurückgeben
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(53): warning C4716: "datenManipulieren": Muss einen Wert zurückgeben
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(44): warning C4716: "datenLaden": Muss einen Wert zurückgeben
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(37): warning C4716: "datenSpeichern": Muss einen Wert zurückgeben
   Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

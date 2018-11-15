@@ -5,6 +5,9 @@ Info:
 Dieses Modul führt die Berechnung der Kennzahlen durch
 */
 
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "ioHilfen.h"
 #include "berechnung.h"
 

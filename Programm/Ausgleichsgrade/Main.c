@@ -51,6 +51,7 @@ gcc -dM -E - </dev/null
 #include <string.h>
 
 	//von eigenen Modulen
+#include "main.h"
 #include "help.h"
 #include "datenHandling.h"
 #include "datenImExport.h"
