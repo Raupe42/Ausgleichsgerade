@@ -13,7 +13,16 @@ Info:
 	//interna
 #include "datenHandling.h"
 
-
+#ifdef NOMAIN
+int main(void)
+{
+	messreihe_t dummyDaten;
+	dummyDaten.messreihe = NULL;
+	dummyDaten.kapazitaetMessreihe = 0;
+	dummyDaten.anzahlMesswerte = 0;
+	
+}
+#endif // !_MAIN
 
 /*
 

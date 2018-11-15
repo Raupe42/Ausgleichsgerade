@@ -26,5 +26,12 @@ Allgemeine Hilfen zur vereinfachung des Ein-Ausgabehandlöings bei Konsolenanwend
 #else
 #define CLS "cls"
 #endif
+/*
+von https://stackoverflow.com/questions/142508/how-do-i-check-os-with-a-preprocessor-directive
+show GCC defines on Windows:
+gcc -dM -E - <NUL:
 
+on Linux:
+gcc -dM -E - </dev/null
+*/
 #endif // !_ioHelp

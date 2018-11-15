@@ -8,35 +8,8 @@ Dies ist die Hauptdatei ...
 */
 
 
-//KONSTANTEN und MAKROS
-#define TEST \x84
-#define ä \x84
-#define ö \x94
-#define ü \x81
-#define Ä \x8E
-#define Ö \x99
-#define Ü \x9A
-#define ß \xE1
 
 
-
-
-
-#ifdef UNIX
-#define CLS "clear"
-#elif unix
-#define CLS "clear"
-#else
-#define CLS "cls"
-#endif
-/*
-von https://stackoverflow.com/questions/142508/how-do-i-check-os-with-a-preprocessor-directive
-show GCC defines on Windows:
-gcc -dM -E - <NUL:
-
-on Linux:
-gcc -dM -E - </dev/null
-*/
 #define xstr(x) #x		//eine KONSTANTE x direkt eintragen
 #define str(x) xstr(x)	//use: str(x)  -> result: x
 
@@ -51,11 +24,13 @@ gcc -dM -E - </dev/null
 #include <string.h>
 
 	//von eigenen Modulen
+#define MAIN
 #include "main.h"
 #include "help.h"
 #include "datenHandling.h"
 #include "datenImExport.h"
 #include "datenUserInterface.h"
+#include "ioHilfen.h"
 
 //globale typedefs
 

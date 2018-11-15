@@ -14,7 +14,7 @@ void printHelp();
 #endif // !_printHelp
 
 #ifndef MAIN
-#define _MAIN
+#define NOMAIN
 #endif // !MAIN
 
 

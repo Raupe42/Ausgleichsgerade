@@ -6,6 +6,13 @@ Info:
 
 #define SPEICHERRESERVE 5	//freie Messwertfelder vor realloziieren
 
+
+
+#ifndef MAIN
+#define NOMAIN
+#endif // !MAIN
+
+
 #ifndef _messdaten_t
 #define _messdaten_t
 /*
