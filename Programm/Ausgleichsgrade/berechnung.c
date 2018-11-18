@@ -11,7 +11,7 @@ Dieses Modul führt die Berechnung der Kennzahlen durch
 #include "ioHilfen.h"
 #include "berechnung.h"
 
-#ifdef NOMAIN
+#ifndef _MAIN
 int main(void)
 {
 	messreihe_t dummyDaten;
@@ -28,4 +28,5 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 	system(CLS);
 	printf("Men"str(ü)" zur Berechnung.\n");
 	getchar();
+	return 0;
 }

@@ -13,7 +13,7 @@ Info:
 	//interna
 #include "datenHandling.h"
 
-#ifdef NOMAIN
+#ifndef _MAIN
 int main(void)
 {
 	messreihe_t dummyDaten;
@@ -25,7 +25,7 @@ int main(void)
 #endif // !_MAIN
 
 /*
-
+LOKALE Funktion
 Parameter:
 anzahl: Anzahl der messwert_t die aufgenommen werden sollen
 	bei Werten <= 0 wird die bestehnde Messreihe gelöscht
@@ -93,8 +93,17 @@ Rückgabewert Status:
 int messreihePruefen(messreihe_t *p_messreihe)
 {
 	//lokaldaten zur lesbarkeit
-	long anzahlMesswerte = p_messreihe->anzahlMesswerte;
+	int i = 0;
+
 	long kapazitaetMessreihe = p_messreihe->kapazitaetMessreihe;
+	//long anzahlMesswerte = p_messreihe->anzahlMesswerte;
+	long anzahlMesswerte = 10;
+	for (i = 0; i < kapazitaetMessreihe; i++)
+	{
+		if ((*p_messreihe->messreihe + i)->val == 1)
+			anzahlMesswerte++;
+	}
+	
 	//prüfe Messreihe
 	if (kapazitaetMessreihe < anzahlMesswerte)
 	{

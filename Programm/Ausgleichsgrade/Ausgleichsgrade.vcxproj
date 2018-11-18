@@ -130,6 +130,7 @@
     <ClInclude Include="help.h" />
     <ClInclude Include="ioHilfen.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="messreihe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

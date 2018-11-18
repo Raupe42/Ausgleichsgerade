@@ -13,7 +13,7 @@ task: Anzeige des Hilfetextets
 #include "help.h"
 #include "ioHilfen.h"
 
-#ifdef NOMAIN
+#ifndef _MAIN
 int main(void)
 {
 	printHelp();

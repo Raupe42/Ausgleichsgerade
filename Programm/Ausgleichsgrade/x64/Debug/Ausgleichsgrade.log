@@ -1,6 +1,5 @@
-﻿datenHandling.obj : error LNK2005: main ist bereits in berechnung.obj definiert.
-datenImExport.obj : error LNK2005: main ist bereits in berechnung.obj definiert.
-datenUserInterface.obj : error LNK2005: main ist bereits in berechnung.obj definiert.
-help.obj : error LNK2005: main ist bereits in berechnung.obj definiert.
-Main.obj : error LNK2005: main ist bereits in berechnung.obj definiert.
-C:\Users\jensh\OneDrive\Dokumente\GitSurface\Ausgleichsgrade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe : fatal error LNK1169: Mindestens ein mehrfach definiertes Symbol gefunden.
+﻿  berechnung.c
+  datenImExport.c
+  datenUserInterface.c
+  Code wird generiert...
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

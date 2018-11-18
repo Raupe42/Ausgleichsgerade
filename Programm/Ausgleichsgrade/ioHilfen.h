@@ -5,6 +5,10 @@ Info:
 Allgemeine Hilfen zur vereinfachung des Ein-Ausgabehandlöings bei Konsolenanwendungen
 */
 
+
+#define _CRT_SECURE_NO_WARNINGS
+
+
 #ifndef _ioHelp
 #define _ioHelp
 

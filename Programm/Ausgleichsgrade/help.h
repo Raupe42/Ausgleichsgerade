@@ -6,7 +6,6 @@ Info:
 
 
 #ifndef _printHelp
-
 #define _printHelp
 
 void printHelp();
@@ -14,7 +13,7 @@ void printHelp();
 #endif // !_printHelp
 
 #ifndef MAIN
-#define NOMAIN
+#define _MAIN
 #endif // !MAIN
 
 

@@ -7,34 +7,19 @@ Info:
 
 
 #ifndef MAIN
-#define NOMAIN
+#define _MAIN
 #endif // !MAIN
 
 
-#ifndef _messdaten_t
-#define _messdaten_t
-/*
-x,y Koordinaten des Messwertes
-val für Gültigkeit ('1': gültig; '0' oder andere: ungültig
-*/
-typedef struct struct_messwert {
-	double x;
-	double y;
-	char val;
-} messwert_t;
-
-typedef struct struct_messreihe {
-	messwert_t(*messreihe)[];
-	long anzahlMesswerte;
-	long kapazitaetMessreihe;
-} messreihe_t;
-
-#endif // !_messdaten_t
+#include "messreihe.h"
 
 #ifndef _datenEinlesen
 #define _datenEinlesen
 /*
 Unterfunktion des Dateneinlesens
+Die Einagbe erfolgt jeweils in einzelenen Koordianten
+Durch die erneute Eingabe des ersten Koordinatenpaares 
+wird die Einagbe beendet
 Para: messreihe
 
 RetVal: status
@@ -59,6 +44,11 @@ int datenAusgeben(messreihe_t *messreihe);
 #define _datenManipulieren
 /*
 Unterfunktion zum Manipulieren einzelner Messwerte
+Durch ein neues Untermenü ist die Manipulation von Datensätzen
+möglich.
+Dazu zählt:
+- das Ändern von Werten
+- löschen von Wertepaaren
 Para: messreihe
 
 RetVal: status
