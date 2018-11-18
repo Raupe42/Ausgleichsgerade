@@ -97,7 +97,7 @@ int messreihePruefen(messreihe_t *p_messreihe)
 
 	long kapazitaetMessreihe = p_messreihe->kapazitaetMessreihe;
 	//long anzahlMesswerte = p_messreihe->anzahlMesswerte;
-	long anzahlMesswerte = 10;
+	long anzahlMesswerte = 0;
 	for (i = 0; i < kapazitaetMessreihe; i++)
 	{
 		if ((*p_messreihe->messreihe + i)->val == 1)
@@ -105,7 +105,7 @@ int messreihePruefen(messreihe_t *p_messreihe)
 	}
 	
 	//prüfe Messreihe
-	if (kapazitaetMessreihe < anzahlMesswerte)
+	if (kapazitaetMessreihe <= anzahlMesswerte)	//= besonders wichtig für kapa, anzahl == 0
 	{
 		int state = messreiheAllocate(anzahlMesswerte + SPEICHERRESERVE, p_messreihe);
 		kapazitaetMessreihe = anzahlMesswerte + SPEICHERRESERVE;

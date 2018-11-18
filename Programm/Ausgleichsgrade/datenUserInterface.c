@@ -134,6 +134,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 							printf("Wert %li: X: %g  Y: %g\n", eingabeLong,
 								(*p_messreihe->messreihe + eingabeLong)->x, (*p_messreihe->messreihe + eingabeLong)->y);
 							*(*p_messreihe->messreihe + eingabeLong) = messwertEinlesen(eingabeLong);
+							messreihePruefen(p_messreihe);
 						}
 						else
 							printf("Wert nicht vorhanden\n");
@@ -141,7 +142,34 @@ int datenManipulieren(messreihe_t *p_messreihe)
 						printf("Wert au"str(ß)"erhalb des Wertebereichs");
 				}
 			} while (eingabeLong != -1);
-
+			break;
+		case 4:
+			printf("Beenden mit Wert-Nr. -1\n");
+			do {
+				scanf("%i", &eingabeLong); while (getchar() != '\n');
+				if (eingabeLong >= 0) {
+					if (eingabeLong < (p_messreihe->kapazitaetMessreihe))
+						if ((*p_messreihe->messreihe + eingabeLong)->val == 1)
+						{
+							printf("Wert %li: X: %g  Y: %g\n", eingabeLong,
+								(*p_messreihe->messreihe + eingabeLong)->x, (*p_messreihe->messreihe + eingabeLong)->y);
+							printf("Wert wirklich löschen? (y/n)?\n");
+							if (getchar() == 'y')
+							{
+								(*p_messreihe->messreihe + eingabeLong)->val = -1;
+								messreihePruefen(p_messreihe);
+							}
+							
+							else if (getchar == 'n');
+							else;
+						}
+						else
+							printf("Wert nicht vorhanden\n");
+					else
+						printf("Wert au"str(ß)"erhalb des Wertebereichs");
+				}
+			} while (eingabeLong != -1);
+			break;
 		default:;
 	}
 	

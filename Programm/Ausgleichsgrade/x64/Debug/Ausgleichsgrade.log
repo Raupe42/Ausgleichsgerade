@@ -1,5 +1,4 @@
-﻿  berechnung.c
-  datenImExport.c
-  datenUserInterface.c
-  Code wird generiert...
+﻿  datenHandling.c
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(74): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(48): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
   Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
