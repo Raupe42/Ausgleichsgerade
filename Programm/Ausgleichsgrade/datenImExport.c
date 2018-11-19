@@ -49,6 +49,7 @@ int datenSpeichern(messreihe_t *p_messreihe)
 int datenLaden(messreihe_t *p_messreihe)
 {
 	FILE* file;
+	messwert_t messwert;
 	char input[250], laenge [100], zahlStr [250];
 	char * p_zahlStr;
 	double zahlX, zahlY;
@@ -94,7 +95,27 @@ int datenLaden(messreihe_t *p_messreihe)
 			
 
 		}*/
+		inChar = '0';
+		while (inChar != '\n')
+		{
+			inChar = fgetc(file);
+			strcat(laenge, inChar);
+		}
+		strcat(laenge, '\0');
 
+		while (!feof(file))
+		{
+			fscanf(file, "%lf", &zahlX);
+			fgetc(file);	//weitere auswertung auf ','
+			fgetc(file);
+			fscanf(file, "%lf", &zahlY);
+			messwert.x = zahlX;
+			messwert.y = zahlY;
+			messwert.val = 1;
+
+			// TODO
+			//inkrementell in messreihe speichern
+		}
 	}
 	getchar();
 	return 0;
