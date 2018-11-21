@@ -77,7 +77,7 @@ int main(void)
 			datenSpeichern(p_messwerte);
 			break;
 		case 5:
-			datenLaden(p_messwerte);
+			datenLadenErsetzend(p_messwerte);
 			break;
 		case 6:
 			//Aufruf zum ermitteln der Daten

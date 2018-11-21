@@ -33,5 +33,5 @@ Para: messreihe
 RetVal: status
 0: kein Fehler
 */
-int datenLaden(messreihe_t *messreihe);
+int datenLadenErsetzend(messreihe_t *messreihe);
 #endif // !_datenLaden

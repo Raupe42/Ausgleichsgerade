@@ -46,7 +46,7 @@ int datenSpeichern(messreihe_t *p_messreihe)
 	return 0;
 }
 
-int datenLaden(messreihe_t *p_messreihe)
+int datenLadenErsetzend(messreihe_t *p_messreihe)
 {
 	FILE* file;
 	messwert_t messwert;
@@ -70,39 +70,7 @@ int datenLaden(messreihe_t *p_messreihe)
 			strcat(laenge, inChar);
 		}
 		strcat(laenge, '\0');
-
-		while (!feof(file))
-		{
-			inChar = '0';
-			while (inChar != '\n')
-			{
-				inChar = fgetc(file);
-				strcat(input, inChar);
-			}
-			strcat(input, '\0');
-			strcpy(zahlStr, input);
-			strtok(zahlStr, ',');
-			zahlX = atof(zahlStr);
-
-
-			strcpy(zahlStr, input);
-			p_zahlStr = &zahlStr;
-			while (*p_zahlStr != ',')
-			{
-				p_zahlStr++;
-			}
-
-			
-
-		}*/
-		inChar = '0';
-		while (inChar != '\n')
-		{
-			inChar = fgetc(file);
-			strcat(laenge, inChar);
-		}
-		strcat(laenge, '\0');
-
+		i = 0;
 		while (!feof(file))
 		{
 			fscanf(file, "%lf", &zahlX);
@@ -113,8 +81,26 @@ int datenLaden(messreihe_t *p_messreihe)
 			messwert.y = zahlY;
 			messwert.val = 1;
 
-			// TODO
-			//inkrementell in messreihe speichern
+			*(*p_messreihe->messreihe +i) = messwert;
+
+					
+		}
+		*/
+		fgets(file,240, &zahlStr);
+		i = 0;
+		while (!feof(file))
+		{
+			fscanf(file, "%lf", &zahlX);
+			fgetc(file);	//weitere auswertung auf ','
+			fgetc(file);
+			fscanf(file, "%lf", &zahlY);
+			messwert.x = zahlX;
+			messwert.y = zahlY;
+			messwert.val = 1;
+
+			*(*p_messreihe->messreihe + i) = messwert;
+
+
 		}
 	}
 	getchar();

@@ -1,4 +1,9 @@
-﻿  datenHandling.c
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(74): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(48): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
+﻿  datenImExport.c
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(89): warning C4133: "Funktion": Inkompatible Typen - von "FILE *" zu "char *"
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(89): warning C4047: "Funktion": Anzahl der Dereferenzierungen bei "FILE *" und "char (*)[250]" unterschiedlich
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(89): warning C4024: "fgets": unterschiedliche Typen für formalen und übergebenen Parameter 3
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(54): warning C4101: "p_zahlStr": Unreferenzierte lokale Variable
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(53): warning C4101: "input": Unreferenzierte lokale Variable
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(56): warning C4101: "inChar": Unreferenzierte lokale Variable
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(53): warning C4101: "laenge": Unreferenzierte lokale Variable
   Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
