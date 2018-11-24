@@ -15,6 +15,7 @@ Modul zum einlesen, anzeigen, manipulieren und speichern von Datensätzen
 //internen Abhängigkeiten
 #include "datenImExport.h"
 #include "ioHilfen.h"
+#include "datenHandling.h"
 
 #ifndef _MAIN
 int main(void)
@@ -50,18 +51,39 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 {
 	FILE* file;
 	messwert_t messwert;
-	char input[250], laenge [100], zahlStr [250];
-	char * p_zahlStr;
+	char  * p_zahlStr;
+	char buffer[100];
 	double zahlX, zahlY;
 	char inChar;
-	int i;
+	int i, ret, anzahl = 0;
 	file = fopen("messreihe.ttj", "r");
 	system(CLS);
-	printf("Daten werden geladen");
+	printf("Daten werden geladen\n");
 	//vorerst einfach überschreiben
 	if (!file)
 		perror("Fehlgeschlagen: ");
 	else {
+		ret = fscanf(file, "%s", buffer);
+		printf("Messreihe ge"str(ö)"ffnet mit: %s ", buffer);
+		ret = fscanf(file, "%i", &anzahl);
+		printf("%i Messwerten\n", anzahl);
+		//Datenbereich vorbereiten
+		messreiheAllocate(anzahl, p_messreihe);
+		i = 0;
+		while (ret != -1)
+		{
+			ret = fscanf(file, "%lf", &zahlX);
+			fgetc(file);
+			ret = fscanf(file, "%lf", &zahlY);
+			if (ret != -1)
+			{
+				messwert.x = zahlX;
+				messwert.y = zahlY;
+				messwert.val = 1;
+				*(*p_messreihe->messreihe + i) = messwert;
+				i++;
+			}
+		}
 		/*
 		inChar = '0';
 		while (inChar != '\n')
@@ -86,7 +108,7 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 					
 		}
 		*/
-		fgets(file,240, &zahlStr);
+		/*fgets(file,240, &zahlStr);
 		i = 0;
 		while (!feof(file))
 		{
@@ -101,7 +123,7 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 			*(*p_messreihe->messreihe + i) = messwert;
 
 
-		}
+		}*/
 	}
 	getchar();
 	return 0;

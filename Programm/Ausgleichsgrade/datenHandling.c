@@ -25,7 +25,6 @@ int main(void)
 #endif // !_MAIN
 
 /*
-LOKALE Funktion
 Parameter:
 anzahl: Anzahl der messwert_t die aufgenommen werden sollen
 	bei Werten <= 0 wird die bestehnde Messreihe gelöscht

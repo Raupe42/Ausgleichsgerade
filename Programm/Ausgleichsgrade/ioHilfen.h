@@ -12,7 +12,6 @@ Allgemeine Hilfen zur vereinfachung des Ein-Ausgabehandlöings bei Konsolenanwend
 #ifndef _ioHelp
 #define _ioHelp
 
-#define TEST \x84
 #define ä \x84
 #define ö \x94
 #define ü \x81

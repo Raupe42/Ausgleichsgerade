@@ -20,5 +20,6 @@ Info:
 
 
 int messreihePruefen (messreihe_t *);
+int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe);
 
 #endif 

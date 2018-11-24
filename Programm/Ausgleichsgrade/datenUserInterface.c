@@ -69,7 +69,7 @@ int datenEinlesen(messreihe_t *p_messreihe)
 	aktMesswert = messwert1;
 	aktObj = findePlatz(p_messreihe);
 	//mehr Werte einlesen
-	do 
+	do
 	{
 		system(CLS);
 		//aktObj = findePlatz(p_messreihe);
@@ -77,13 +77,13 @@ int datenEinlesen(messreihe_t *p_messreihe)
 		aktObj = findePlatz(p_messreihe);
 		wertNr++;
 		printf("Messwert 1 X=%g, Y=%g", messwert1.x, messwert1.y);
-		printf("      (Erneut einegeben f"str(ü)"r Eingabeende\n");
+		printf("      (Erneut einegeben f"str(ü)"r Eingabeende)\n");
 		printf("Wert %i:\nX:", wertNr);
 		aktMesswert.x = doubleEinlesen();
 		printf("Y:");
 		aktMesswert.y = doubleEinlesen();
 		aktMesswert.val = 1;
-	} while (aktMesswert.x != messwert1.x && aktMesswert.y != messwert1.y);
+		} while (aktMesswert.x != messwert1.x || aktMesswert.y != messwert1.y);
 
 
 	getchar();
@@ -95,26 +95,29 @@ int datenManipulieren(messreihe_t *p_messreihe)
 	long auswahl, eingabeLong;
 	system(CLS);
 	printf("Datenmanipulation\n");
-	printf("(1) Daten ausgeben\n");
+	//printf("(1) Daten ausgeben\n");
 	printf("(2) Datensatz anzeigen\n");
-	printf("(3) Datensatz verändern\n");
+	printf("(3) Datensatz ver"str(ä)"ndern\n");
 	printf("(4) Datensatz l"str(ö)"schen\n");
+	printf("\n");
+	printf("(0) Hauptmen"str(ü)"\n");
 	// mehrere Datensätzen löschen ??
 	scanf("%i", &auswahl); while (getchar() != '\n');
 
-	switch (auswahl)
-	{
+	do {
+		switch (auswahl)
+		{
 		case 1:
-			datenAusgeben(p_messreihe);
+			//datenAusgeben(p_messreihe);
 			break;
-		case 2: 
+		case 2:
 			printf("Beenden mit Wert-Nr. -1\n");
 			do {
 				scanf("%i", &eingabeLong); while (getchar() != '\n');
 				if (eingabeLong >= 0) {
 					if (eingabeLong < (p_messreihe->kapazitaetMessreihe))
 						if ((*p_messreihe->messreihe + eingabeLong)->val == 1)
-							printf("Wert %li: X: %g  Y: %g\n",eingabeLong,
+							printf("Wert %li: X: %g  Y: %g\n", eingabeLong,
 							(*p_messreihe->messreihe + eingabeLong)->x, (*p_messreihe->messreihe + eingabeLong)->y);
 						else
 							printf("Wert nicht vorhanden\n");
@@ -159,7 +162,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 								(*p_messreihe->messreihe + eingabeLong)->val = -1;
 								messreihePruefen(p_messreihe);
 							}
-							
+
 							else if (getchar == 'n');
 							else;
 						}
@@ -171,8 +174,8 @@ int datenManipulieren(messreihe_t *p_messreihe)
 			} while (eingabeLong != -1);
 			break;
 		default:;
-	}
-	
+		}
+	} while (auswahl != 0);
 	return 0;
 }
 
