@@ -92,7 +92,8 @@ int datenEinlesen(messreihe_t *p_messreihe)
 
 int datenManipulieren(messreihe_t *p_messreihe)
 {
-	long auswahl, eingabeLong;
+	long auswahl = 0, eingabeLong;
+	while (auswahl >= 0) {
 	system(CLS);
 	printf("Datenmanipulation\n");
 	//printf("(1) Daten ausgeben\n");
@@ -103,8 +104,6 @@ int datenManipulieren(messreihe_t *p_messreihe)
 	printf("(0) Hauptmen"str(ü)"\n");
 	// mehrere Datensätzen löschen ??
 	scanf("%i", &auswahl); while (getchar() != '\n');
-
-	do {
 		switch (auswahl)
 		{
 		case 1:
@@ -175,7 +174,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 			break;
 		default:;
 		}
-	} while (auswahl != 0);
+	}
 	return 0;
 }
 

@@ -30,3 +30,14 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 	getchar();
 	return 0;
 }
+
+double berechneY_Achsenabschnitt(messreihe_t* p_messreihe)
+{
+	double retVal = 0;
+
+}
+
+double berechneSteigung(messreihe_t* p_messreihe)
+{
+
+}
