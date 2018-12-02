@@ -58,7 +58,8 @@ int main(void)
 		funktionalitaet = menue();
 		printf("%i \n", funktionalitaet);
 
-		messreihePruefen(&messwerte);
+		//messreihePruefen(&messwerte);
+		messreihePruefen(p_messwerte);
 
 		switch (funktionalitaet)
 		{
@@ -81,6 +82,7 @@ int main(void)
 			break;
 		case 6:
 			//Aufruf zum ermitteln der Daten
+			berechnungsmenue(p_messwerte);
 			break;
 		case 7:
 			printHelp();
@@ -174,8 +176,10 @@ Der Rückgabewert ist die ausgewählte Funktionalität
 int menue()
 {
 	int retVal = -1;
+	char buff = '\n';
 	do
 	{
+		system(CLS);
 		printf("(1) Daten aufnehmen\n");
 		printf("(2) Daten ausgeben\n");
 		printf("(3) Daten korrigieren\n");
@@ -186,7 +190,15 @@ int menue()
 		printf("(0) Ende\n\n");
 		printf("(9) Debug-Modus\n");
 		
-		scanf("%i", &retVal); while (getchar() != '\n');
+		if (buff != '\n')
+		{
+			printf("\nHier sollte ein qualifizierter Fehler stehen...\n");
+			
+
+		}
+
+		scanf("%i", &retVal); while (buff = getchar() != '\n');
+	
 	} while (retVal == -1);
 
 	return retVal;

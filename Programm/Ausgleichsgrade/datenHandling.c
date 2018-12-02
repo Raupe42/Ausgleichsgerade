@@ -1,5 +1,10 @@
 /*
 author: Raupe
+In diesem Modul wird die Messreihe im Heap verwaltet
+Hier wird initialisiert über malloc,
+realloziiert mit realloc und ggf. der Speicher mit free freigegeben
+
+Desweiteren gibt es eine Funktion zur automatisierten Prüfung der Speicherkapazität
 
 Info:
 */
@@ -20,7 +25,7 @@ int main(void)
 	dummyDaten.messreihe = NULL;
 	dummyDaten.kapazitaetMessreihe = 0;
 	dummyDaten.anzahlMesswerte = 0;
-	
+
 }
 #endif // !_MAIN
 
@@ -51,11 +56,15 @@ int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 	if (messreihe == NULL)	//malloc
 	{
 		messreihe = malloc(neueAnzahl * sizeof(messwert_t));
+		p_messreihe->anzahlMesswerte = 0;
+		p_messreihe->kapazitaetMessreihe = neueAnzahl;
 		retVal = 1;
 	}
 	else if (messreihe && neueAnzahl > 0)	//realloc
 	{
 		messreihe = (messwert_t*)realloc(messreihe, neueAnzahl * sizeof(messwert_t));
+		p_messreihe->anzahlMesswerte = neueAnzahl;
+		p_messreihe->kapazitaetMessreihe = neueAnzahl;
 		retVal = 2;
 	}
 	else if (messreihe && neueAnzahl <= 0)	//free
@@ -67,7 +76,7 @@ int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 		return -1;
 	if (!messreihe)
 		retVal = -1;
-	
+
 
 	//lokal zrück speichern
 	p_messreihe->messreihe = messreihe;
@@ -92,26 +101,33 @@ Rückgabewert Status:
 int messreihePruefen(messreihe_t *p_messreihe)
 {
 	//lokaldaten zur lesbarkeit
-	int i = 0;
+	int i = 0, state;
 
 	long kapazitaetMessreihe = p_messreihe->kapazitaetMessreihe;
+	long letzterMesswert = 0;
 	//long anzahlMesswerte = p_messreihe->anzahlMesswerte;
 	long anzahlMesswerte = 0;
 	for (i = 0; i < kapazitaetMessreihe; i++)
 	{
 		if ((*p_messreihe->messreihe + i)->val == 1)
+		{
 			anzahlMesswerte++;
+			letzterMesswert = i;
+		}
 	}
-	
+
 	//prüfe Messreihe
 	if (kapazitaetMessreihe <= anzahlMesswerte)	//= besonders wichtig für kapa, anzahl == 0
 	{
 		int state = messreiheAllocate(anzahlMesswerte + SPEICHERRESERVE, p_messreihe);
 		kapazitaetMessreihe = anzahlMesswerte + SPEICHERRESERVE;
 	}
-	else if (kapazitaetMessreihe > anzahlMesswerte * 1.1)		//TODO: Prüfe, ob keine gültigen Messwerte verworfen werden
+	else if (kapazitaetMessreihe > anzahlMesswerte * 1.1)	
 	{
-		int state = messreiheAllocate(anzahlMesswerte + SPEICHERRESERVE, p_messreihe);
+		if (letzterMesswert > anzahlMesswerte)
+			state = messreiheAllocate(letzterMesswert + SPEICHERRESERVE, p_messreihe);
+		else
+			state = messreiheAllocate(anzahlMesswerte + SPEICHERRESERVE, p_messreihe);
 		kapazitaetMessreihe = anzahlMesswerte + SPEICHERRESERVE;
 	}
 

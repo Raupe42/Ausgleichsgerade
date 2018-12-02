@@ -92,11 +92,12 @@ int datenEinlesen(messreihe_t *p_messreihe)
 
 int datenManipulieren(messreihe_t *p_messreihe)
 {
-	long auswahl = 0, eingabeLong;
-	while (auswahl >= 0) {
+	int i;
+	long auswahl = 42, eingabeLong;
+	while (auswahl > 0) {
 	system(CLS);
 	printf("Datenmanipulation\n");
-	//printf("(1) Daten ausgeben\n");
+	printf("(1) Daten l"str(ö)"schen\n");
 	printf("(2) Datensatz anzeigen\n");
 	printf("(3) Datensatz ver"str(ä)"ndern\n");
 	printf("(4) Datensatz l"str(ö)"schen\n");
@@ -107,7 +108,9 @@ int datenManipulieren(messreihe_t *p_messreihe)
 		switch (auswahl)
 		{
 		case 1:
-			//datenAusgeben(p_messreihe);
+			for (i = 0; i < p_messreihe->kapazitaetMessreihe; i++)
+				(*p_messreihe->messreihe + i)->val = -1;
+			messreihePruefen(p_messreihe);
 			break;
 		case 2:
 			printf("Beenden mit Wert-Nr. -1\n");

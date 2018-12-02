@@ -1,3 +1,2 @@
-﻿  datenUserInterface.c
-c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(165): warning C4047: "==": Anzahl der Dereferenzierungen bei "int (__cdecl *)(void)" und "int" unterschiedlich
-  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
+﻿  Main.c
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\OneDrive\Dokumente\GitSurface\Ausgleichsgrade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

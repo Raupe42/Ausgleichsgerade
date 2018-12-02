@@ -3,6 +3,7 @@ author: Raupe
 
 Info:
 Dieses Modul führt die Berechnung der Kennzahlen durch
+Nach außen ist nur die Hauptfunktion sichtbar.
 */
 
 #include <stdlib.h>
@@ -22,59 +23,116 @@ int main(void)
 }
 #endif // !_MAIN
 
+//local Proto
+double berechneY_Achsenabschnitt(messreihe_t* p_messreihe, long double nenner);
+double berechneSteigung(messreihe_t* p_messreihe, long double nenner);
+long double berechneNenner(messreihe_t* p_messreihe);
+long double berechneSumme(messreihe_t* p_messreihe, long double(*sumFunk)(messwert_t* p_messwert));
+long double sumX(messwert_t* p_messwert);
+long double sumY(messwert_t* p_messwert);
+long double sumXpow2(messwert_t* p_messwert);
+long double sumXY(messwert_t* p_messwert);
 
 int berechnungsmenue(messreihe_t *p_messdaten)
 {
+	double m, b;
+	long double nenner;
 	system(CLS);
 	printf("Men"str(ü)" zur Berechnung.\n");
 	getchar();
+	printf("starte Berechnung\n");
+	nenner = berechneNenner(p_messdaten);
+	b = berechneY_Achsenabschnitt(p_messdaten, nenner);
+	m = berechneSteigung(p_messdaten, nenner);
+	//printf("m * x + b = %g * x + %g", m, b);
+	printf("b = %g\n", b);
+	printf("m = %g\n", m);
+	printf("y = %g x + %g", m, b);
+	while (getchar() != '\n');
 	return 0;
 }
 
-double berechneY_Achsenabschnitt(messreihe_t* p_messreihe)
+/*
+Parameter: p-messreihe: die Messreihe
+nenner: der zuvor berechnete Nenner als long double
+Die angewendete Formel entsprocht der Vorlage
+Rückgabewert: b als double Wert
+*/
+double berechneY_Achsenabschnitt(messreihe_t* p_messreihe, long double nenner)
 {
-	double retVal = 0;
-
+	double b= 0;
+	b = berechneSumme (p_messreihe, sumY) * berechneSumme(p_messreihe, sumXpow2) 
+		- berechneSumme(p_messreihe, sumX) * berechneSumme(p_messreihe, sumXY);
+	return b/nenner;
 }
-
-double berechneSteigung(messreihe_t* p_messreihe)
+/*
+Parameter: p-messreihe: die Messreihe
+nenner: der zuvor berechnete Nenner als long double
+Die angewendete Formel entsprocht der Vorlage
+Rückgabewert: m als double Wert
+*/
+double berechneSteigung(messreihe_t* p_messreihe, long double nenner)
 {
-
+	double m = 0;
+	m = p_messreihe->anzahlMesswerte * berechneSumme(p_messreihe, sumXY) 
+		- berechneSumme(p_messreihe, sumX) * berechneSumme(p_messreihe, sumY);
+	return m/nenner;
 }
-
+/*
+Parameter:p-messreihe: die Messreihe
+Berechnung des Nenners nach gegebener Formel
+Rückgabwert: Nenner des Bruches als long double
+*/
 long double berechneNenner(messreihe_t* p_messreihe)
 {
-
+	long double retVal;
+	long n = p_messreihe->anzahlMesswerte;
+	long double sumXValue = berechneSumme(p_messreihe, sumX);
+	retVal = n * berechneSumme(p_messreihe, sumXpow2) - sumXValue * sumXValue;
+	return retVal;
 }
-
-long double berechneSumme(messreihe_t* p_messreihe, double (*sumFunk)(messwert_t* p_messwert))
+/*
+Parameter: p-messreihe: die Messreihe
+sumFunk: Zeiger euf eine der Berechnungsfunktionen
+So wird die Summe einer Variablen Berechnungsvorschrift über
+die gültigen Messwerte gebildet
+*/
+long double berechneSumme(messreihe_t* p_messreihe, long double (*sumFunk)(messwert_t* p_messwert))
 {
 	int i;
 	long double summe = 0;
-	for (i = 0; i < p_messreihe->anzahlMesswerte; i++)
+	for (i = 0; i < p_messreihe->kapazitaetMessreihe; i++)
 	{
-
+		if ((*p_messreihe->messreihe + i)->val == 1)
+			summe += sumFunk((*p_messreihe->messreihe + i));
 	}
+	return summe;
 }
-
-
-
-double sumX(messwert_t* p_messwert)
+/*
+Rechenvorschrift x
+*/
+long double sumX(messwert_t* p_messwert)
 {
 	return p_messwert->x;
 }
-
-double sumY(messwert_t* p_messwert)
+/*
+Rechenvorschrift y
+*/
+long double sumY(messwert_t* p_messwert)
 {
 	return p_messwert->y;
 }
-
-double sumXpow2(messwert_t* p_messwert)
+/*
+Rechenvorschrift x*x
+*/
+long double sumXpow2(messwert_t* p_messwert)
 {
 	return (p_messwert->x * p_messwert->x);
 }
-
-double sumXY(messwert_t* p_messwert)
+/*
+Rechenvorschrift x*y
+*/
+long double sumXY(messwert_t* p_messwert)
 {
 	return (p_messwert->x * p_messwert->y);
 }

@@ -41,7 +41,7 @@ int datenSpeichern(messreihe_t *p_messreihe)
 			fprintf(file, "%lf, %lf\n", (*p_messreihe->messreihe + i)->x, (*p_messreihe->messreihe + i)->y);
 		}
 		fclose(file);
-		printf("Abgeschloseen...\n");
+		printf("Abgeschlossen...\n");
 	}
 	getchar();
 	return 0;
