@@ -186,8 +186,14 @@ int datenManipulieren(messreihe_t *p_messreihe)
 double doubleEinlesen()
 {
 	double retVal = 0.;
+	char buff;
 	scanf("%lf", &retVal);
-	//while (getchar() != '\n');
+	while (buff = getchar() != '\n');
+	if (buff != '\n')
+	{
+		printf("fehler: \n");
+		getchar();
+	}
 	return retVal;
 }
 
