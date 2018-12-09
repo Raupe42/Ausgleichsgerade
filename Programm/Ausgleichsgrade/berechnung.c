@@ -38,7 +38,7 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 	double m, b;
 	long double nenner;
 	system(CLS);
-	printf("Men"str(ü)" zur Berechnung.\n");
+	printf("Men"str(_ue)" zur Berechnung.\n");
 	getchar();
 	printf("starte Berechnung\n");
 	nenner = berechneNenner(p_messdaten);

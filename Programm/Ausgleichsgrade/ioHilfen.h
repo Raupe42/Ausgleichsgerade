@@ -12,13 +12,13 @@ Allgemeine Hilfen zur vereinfachung des Ein-Ausgabehandlöings bei Konsolenanwend
 #ifndef _ioHelp
 #define _ioHelp
 
-#define ä \x84
-#define ö \x94
-#define ü \x81
-#define Ä \x8E
-#define Ö \x99
-#define Ü \x9A
-#define ß \xE1
+#define _ae \x84
+#define _oe \x94
+#define _ue \x81
+#define _AE \x8E
+#define _OE \x99
+#define _UE \x9A
+#define _sz \xE1
 #define xstr(x) #x		//eine KONSTANTE x direkt eintragen
 #define str(x) xstr(x)	//use: str(x)  -> result: x
 
@@ -38,3 +38,4 @@ on Linux:
 gcc -dM -E - </dev/null
 */
 #endif // !_ioHelp
+

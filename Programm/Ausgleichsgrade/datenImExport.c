@@ -64,7 +64,7 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 		perror("Fehlgeschlagen: ");
 	else {
 		ret = fscanf(file, "%s", buffer);
-		printf("Messreihe ge"str(ö)"ffnet mit: %s ", buffer);
+		printf("Messreihe ge"str(_oe)"ffnet mit: %s ", buffer);
 		ret = fscanf(file, "%i", &anzahl);
 		printf("%i Messwerten\n", anzahl);
 		//Datenbereich vorbereiten

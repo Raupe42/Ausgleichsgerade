@@ -40,7 +40,7 @@ int datenAusgeben(messreihe_t *p_messreihe)
 	char buff;
 	system(CLS);
 	printf("Anahl der Messwerte bis Eingabetaste gefordert wird:\n");
-	printf("(0 f"str(ü)"r geamte Ausgabe)\n");
+	printf("(0 f"str(_ue)"r geamte Ausgabe)\n");
 	scanf("%i", &anzahlProBlock);
 	while (buff = getchar() != '\n')
 	{
@@ -94,7 +94,7 @@ int datenEinlesen(messreihe_t *p_messreihe)
 	printf("Zum beenden den ersten Wert erneut eingeben.\n");
 	printf("Die einzelnen Werte eines Datenpaares werden getrennt abgefragt\n");
 
-	printf("Bitte Eingabetaste dr"str(ü)"cken\n");
+	printf("Bitte Eingabetaste dr"str(_ue)"cken\n");
 	while (getchar() != '\n');
 
 	//Einlesen
@@ -110,7 +110,7 @@ int datenEinlesen(messreihe_t *p_messreihe)
 		aktObj = findePlatz(p_messreihe);
 		wertNr++;
 		sprintf(text, "Messwert 1 X=%g, Y=%g", messwert1.x, messwert1.y);
-		sprintf(tmpStr, "      (Erneut einegeben f"str(ü)"r Eingabeende)\n");
+		sprintf(tmpStr, "      (Erneut einegeben f"str(_ue)"r Eingabeende)\n");
 		strcat(text, tmpStr);
 		aktMesswert = messwertEinlesen(wertNr, text);
 		aktMesswert.val = 1;
@@ -127,18 +127,18 @@ int datenManipulieren(messreihe_t *p_messreihe)
 	while (auswahl > 0) {
 		system(CLS);
 		printf("Datenmanipulation\n");
-		printf("(1) Daten l"str(ö)"schen\n");
+		printf("(1) Daten l"str(_oe)"schen\n");
 		printf("(2) Datensatz anzeigen\n");
-		printf("(3) Datensatz ver"str(ä)"ndern\n");
-		printf("(4) Datensatz l"str(ö)"schen\n");
+		printf("(3) Datensatz ver"str(_ae)"ndern\n");
+		printf("(4) Datensatz l"str(_oe)"schen\n");
 		printf("\n");
-		printf("(0) Hauptmen"str(ü)"\n");
+		printf("(0) Hauptmen"str(_ue)"\n");
 		// mehrere Datensätzen löschen ??
 		scanf("%i", &auswahl); while (buff = getchar() != '\n');
 		switch (auswahl)
 		{
 		case 1:
-			printf("ALLE Werte wirklich l"str(ö)"schen? (y/n)?\n");
+			printf("ALLE Werte wirklich l"str(_oe)"schen? (y/n)?\n");
 			
 			if (getchar() == 'y')
 			{
@@ -168,7 +168,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 						else
 							printf("Wert nicht vorhanden\n");
 					else
-						printf("Wert au"str(ß)"erhalb des Wertebereichs");
+						printf("Wert au"str(_sz)"erhalb des Wertebereichs");
 				}
 			} while (eingabeLong != -1.);
 			break;
@@ -194,7 +194,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 						else
 							printf("Wert nicht vorhanden\n");
 					else
-						printf("Wert au"str(ß)"erhalb des Wertebereichs");
+						printf("Wert au"str(_sz)"erhalb des Wertebereichs");
 				}
 			} while (eingabeLong != -1.);
 			break;
@@ -212,7 +212,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 						{
 							printf("Wert %li: X: %g  Y: %g\n", eingabeLong,
 								(*p_messreihe->messreihe + eingabeLong)->x, (*p_messreihe->messreihe + eingabeLong)->y);
-							printf("Wert wirklich l"str(ö)"schen? (y/n)?\n");
+							printf("Wert wirklich l"str(_oe)"schen? (y/n)?\n");
 							if (getchar() == 'y')
 							{
 								(*p_messreihe->messreihe + eingabeLong)->val = -1;
@@ -224,7 +224,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 						else
 							printf("Wert nicht vorhanden\n");
 					else
-						printf("Wert au"str(ß)"erhalb des Wertebereichs");
+						printf("Wert au"str(_sz)"erhalb des Wertebereichs");
 				}
 			} while (eingabeLong != -1.);
 			break;
@@ -280,7 +280,7 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 		}
 		if (!valid)
 		{
-			printf("Fehlerhafte Eingabe: %s\nBeliebige Taste dr"str(ü)"cken\n", input);
+			printf("Fehlerhafte Eingabe: %s\nBeliebige Taste dr"str(_ue)"cken\n", input);
 			while (getchar() != '\n');
 			getchar();
 

@@ -1,0 +1,15 @@
+﻿  berechnung.c
+  datenHandling.c
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(82): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(52): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
+  datenImExport.c
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(54): warning C4101: "p_zahlStr": Unreferenzierte lokale Variable
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(57): warning C4101: "inChar": Unreferenzierte lokale Variable
+  datenUserInterface.c
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(295): warning C4101: "input": Unreferenzierte lokale Variable
+  help.c
+  Main.c
+  Code wird generiert.
+  All 33 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Release\Ausgleichsgrade.exe

@@ -9,10 +9,6 @@ Dies ist die Hauptdatei ...
 
 
 
-
-#define xstr(x) #x		//eine KONSTANTE x direkt eintragen
-#define str(x) xstr(x)	//use: str(x)  -> result: x
-
 //VS-CE ONLY:
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -22,6 +18,7 @@ Dies ist die Hauptdatei ...
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 	//von eigenen Modulen
 #define MAIN
@@ -52,13 +49,17 @@ int main(void)
 	messwerte.kapazitaetMessreihe = 0;
 	messreihe_t *p_messwerte = &messwerte;
 	int i;	//Hilfsvariable für Zählschleifen usw.
+
+
+	//setlocale(LC_ALL, "de_DE");	//Aufgrund der Umlautbehandlung nicht moeglich
+	setlocale(LC_NUMERIC, "");
+
+
 	while (funktionalitaet != 0)		//Bedienschleife der Konsole
 	{
 		system(CLS);
 		funktionalitaet = menue();
 		printf("%i \n", funktionalitaet);
-
-		//messreihePruefen(&messwerte);
 		messreihePruefen(p_messwerte);
 
 		switch (funktionalitaet)

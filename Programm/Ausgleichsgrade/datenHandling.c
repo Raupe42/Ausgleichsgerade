@@ -49,7 +49,7 @@ int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 
 {
 	//lokal für lesabrkeit
-	messwert_t *messreihe = p_messreihe->messreihe;
+	messwert_t *messreihe = (messwert_t*) p_messreihe->messreihe;
 
 	int retVal = -1;
 
@@ -79,7 +79,7 @@ int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 
 
 	//lokal zrück speichern
-	p_messreihe->messreihe = messreihe;
+	p_messreihe->messreihe = (messreihe_t*) messreihe;
 	return retVal;
 }
 
