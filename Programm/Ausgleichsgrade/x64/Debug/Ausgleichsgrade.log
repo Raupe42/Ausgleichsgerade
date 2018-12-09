@@ -1,5 +1,5 @@
 ﻿  datenUserInterface.c
-c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\datenuserinterface.c(218): warning C4028: Formaler Parameter "3" unterscheidet sich von der Deklaration
-c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\datenuserinterface.c(218): warning C4029: Deklarierte Liste formaler Parameter weicht von der Definition ab
-c:\users\jensh\onedrive\dokumente\gitsurface\ausgleichsgrade\programm\ausgleichsgrade\datenuserinterface.c(264): warning C4101: "input": Unreferenzierte lokale Variable
-  Ausgleichsgrade.vcxproj -> C:\Users\jensh\OneDrive\Dokumente\GitSurface\Ausgleichsgrade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(180): warning C4244: "=": Konvertierung von "double" in "long", möglicher Datenverlust
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(204): warning C4244: "=": Konvertierung von "double" in "long", möglicher Datenverlust
+c:\users\jensh\documents\ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(292): warning C4101: "input": Unreferenzierte lokale Variable
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

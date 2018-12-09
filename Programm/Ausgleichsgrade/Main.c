@@ -142,7 +142,7 @@ int main(void)
 					printHelp();
 					break;
 				default:
-					printf("Flasche Eingabe \n");
+					printf("Falsche Eingabe \n");
 					break;
 
 
@@ -150,7 +150,7 @@ int main(void)
 			}
 			break;
 		default:
-			printf("Flasche Eingabe \n");
+			printf("Falsche Eingabe \n");
 			break;
 
 
@@ -192,7 +192,7 @@ int menue()
 		
 		if (buff != '\n')
 		{
-			printf("\nHier sollte ein qualifizierter Fehler stehen...\n");
+			printf("\nFehlerhafte Eingabe: %c\n", buff);
 			
 
 		}

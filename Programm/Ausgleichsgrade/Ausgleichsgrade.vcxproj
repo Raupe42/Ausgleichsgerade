@@ -132,6 +132,9 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="messreihe.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="messreihe.ttj" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
