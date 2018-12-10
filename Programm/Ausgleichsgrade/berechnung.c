@@ -5,12 +5,14 @@ Info:
 Dieses Modul führt die Berechnung der Kennzahlen durch
 Nach außen ist nur die Hauptfunktion sichtbar.
 */
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <stdlib.h>
 #include <stdio.h>
 
 #include "ioHilfen.h"
 #include "berechnung.h"
+
 
 #ifndef _MAIN
 int main(void)
@@ -32,11 +34,13 @@ long double sumX(messwert_t* p_messwert);
 long double sumY(messwert_t* p_messwert);
 long double sumXpow2(messwert_t* p_messwert);
 long double sumXY(messwert_t* p_messwert);
+void punkteEinerGeraden(double m, double b);
 
 int berechnungsmenue(messreihe_t *p_messdaten)
 {
 	double m, b;
 	long double nenner;
+	char buff;
 	system(CLS);
 	printf("Men"str(_ue)" zur Berechnung.\n");
 	getchar();
@@ -49,6 +53,10 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 	printf("m = %g\n", m);
 	printf("y = %g x + %g", m, b);
 	while (getchar() != '\n');
+	printf("Soll eine Wertetabelle angezeigt werden? (y/n)\n");
+	buff = getchar();
+	if (buff == 'y')
+		punkteEinerGeraden(m, b);
 	return 0;
 }
 
@@ -135,4 +143,40 @@ Rechenvorschrift x*y
 long double sumXY(messwert_t* p_messwert)
 {
 	return (p_messwert->x * p_messwert->y);
+}
+
+/*
+Diese Funktion gibt in Abhängigkeit von Benutzereingaben
+Punkte einer Geraden aus
+Rückgabewert: void
+Parameter: double m, b
+	wie in der allg. Geradengleichung m*x+b
+*/
+void punkteEinerGeraden(double m, double b)
+{
+	long i, n;
+	double schrittw;
+	int stellenzahl;
+	printf("Wie viele Eintr"str(_ae)"ge sollen Angezeigt werden?\n");
+	scanf("%li", &n);
+	while (getchar() != '\n');
+	printf("Bei welchern Schittweite?\n");
+	scanf("%lf", &schrittw);
+	while (getchar() != '\n');
+	printf("Mit welchen Stellenzahl?\n");
+	scanf("%i", &stellenzahl);
+	if (stellenzahl < 0)
+		stellenzahl *= -1;
+	while (getchar() != '\n');
+	printf("Y = m * x + b\n");
+	for (i = 0; i < n; i++)
+	{
+		printf("Y = %.*lf * %.*lf + %.*lf = %.*lf\n",
+			stellenzahl, m, 
+			stellenzahl,(i * schrittw), 
+			stellenzahl, b,stellenzahl, 
+			m*(i*schrittw) + b);
+	}
+	while (getchar()!= '\n');
+	return;
 }

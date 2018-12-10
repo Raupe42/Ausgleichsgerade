@@ -84,46 +84,7 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 				i++;
 			}
 		}
-		/*
-		inChar = '0';
-		while (inChar != '\n')
-		{
-			inChar = fgetc(file);
-			strcat(laenge, inChar);
-		}
-		strcat(laenge, '\0');
-		i = 0;
-		while (!feof(file))
-		{
-			fscanf(file, "%lf", &zahlX);
-			fgetc(file);	//weitere auswertung auf ','
-			fgetc(file);
-			fscanf(file, "%lf", &zahlY);
-			messwert.x = zahlX;
-			messwert.y = zahlY;
-			messwert.val = 1;
 
-			*(*p_messreihe->messreihe +i) = messwert;
-
-					
-		}
-		*/
-		/*fgets(file,240, &zahlStr);
-		i = 0;
-		while (!feof(file))
-		{
-			fscanf(file, "%lf", &zahlX);
-			fgetc(file);	//weitere auswertung auf ','
-			fgetc(file);
-			fscanf(file, "%lf", &zahlY);
-			messwert.x = zahlX;
-			messwert.y = zahlY;
-			messwert.val = 1;
-
-			*(*p_messreihe->messreihe + i) = messwert;
-
-
-		}*/
 	}
 	getchar();
 	return 0;
