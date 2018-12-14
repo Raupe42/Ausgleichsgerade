@@ -1,2 +1,7 @@
-﻿  berechnung.c
-  Ausgleichsgrade.vcxproj -> C:\Users\jensh\OneDrive\Dokumente\GitSurface\Ausgleichsgrade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
+﻿  Main.c
+  berechnung.c
+  datenImExport.c
+  datenUserInterface.c
+  help.c
+  Code wird generiert...
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

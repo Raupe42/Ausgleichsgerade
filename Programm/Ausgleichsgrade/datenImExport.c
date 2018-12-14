@@ -24,6 +24,10 @@ int main(void)
 }
 #endif // !_MAIN
 
+/*
+Diese Funktion speicher die aktuelle Messreihe mit einer Zusatzinformation ab.
+Es wird die Anzahl der Messwerte mit abgelegt.
+*/
 int datenSpeichern(messreihe_t *p_messreihe)
 {
 	FILE* file;
@@ -47,14 +51,19 @@ int datenSpeichern(messreihe_t *p_messreihe)
 	return 0;
 }
 
+/*
+Diese Funktion lädt den Inhalt einer Backup Datei.
+Die geladenen Werte überschreiben bereits existierende Werte.
+Es wird von der Initalen Informationszeile übner die Anzahl der Werte ausgegangen
+*/
 int datenLadenErsetzend(messreihe_t *p_messreihe)
 {
 	FILE* file;
 	messwert_t messwert;
-	char  * p_zahlStr;
+	//char  * p_zahlStr;
 	char buffer[100];
 	double zahlX, zahlY;
-	char inChar;
+	//char inChar;
 	int i, ret, anzahl = 0;
 	file = fopen("messreihe.ttj", "r");
 	system(CLS);

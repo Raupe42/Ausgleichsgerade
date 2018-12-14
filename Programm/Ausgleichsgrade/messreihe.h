@@ -1,7 +1,14 @@
 /*
 author: Raupe
 
-
+Info:
+Diese Header-Datei definiert die maßgebliche Datenstruktur dieser Anwendung.
+Zur besseren Übersicht ist hierzu eine Begleitdokumentation angefertigt worden.
+Für ein effizientes Handling innerhalb des Programms mit übersichtlichen 
+Aufrugen werden hier die Strukturen über typedef erstellt
+Die zentrale Referenz auf die Datenreihe darf nicht verloren gehen und sollte 
+z.B. in der MAIN-Funktion verwaltet werden.
+Die Struktur ist für "call by name" optimiert- also für Zeiger-Übergaben
 
 */
 

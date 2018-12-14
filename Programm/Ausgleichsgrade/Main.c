@@ -51,8 +51,8 @@ int main(void)
 	int i;	//Hilfsvariable für Zählschleifen usw.
 
 
-	//setlocale(LC_ALL, "de_DE");	//Aufgrund der Umlautbehandlung nicht moeglich
-	setlocale(LC_NUMERIC, "");
+	setlocale(LC_ALL, "de_DE");	//Erfordert alternative Umlautbehandlung
+	//setlocale(LC_NUMERIC, "");
 
 
 	while (funktionalitaet != 0)		//Bedienschleife der Konsole

@@ -87,13 +87,8 @@ int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 der benötigte Speicherplatz im Hauptspeicher soll
 relativ optimal dimensioniert werden
 
-Parameter:
+Parameter: p_messreihe
 Alle Werte werden als InPlaceSubstitution ggf. geändert
-.
-.
-.
-
-
 Rückgabewert Status:
 0: kein Fehler
 */

@@ -36,6 +36,11 @@ long double sumXpow2(messwert_t* p_messwert);
 long double sumXY(messwert_t* p_messwert);
 void punkteEinerGeraden(double m, double b);
 
+
+/*
+Dies ist die Hauptfunktion des Berechnungsmoduls.
+Von hier werden die weiteren Unterfunktionen aufgerufen.
+*/
 int berechnungsmenue(messreihe_t *p_messdaten)
 {
 	double m, b;
@@ -48,7 +53,6 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 	nenner = berechneNenner(p_messdaten);
 	b = berechneY_Achsenabschnitt(p_messdaten, nenner);
 	m = berechneSteigung(p_messdaten, nenner);
-	//printf("m * x + b = %g * x + %g", m, b);
 	printf("b = %g\n", b);
 	printf("m = %g\n", m);
 	printf("y = %g x + %g\n", m, b);

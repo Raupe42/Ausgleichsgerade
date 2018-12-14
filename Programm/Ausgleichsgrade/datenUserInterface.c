@@ -297,7 +297,8 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 messwert_t messwertEinlesen(long wertNr, char introText[])
 {
 	messwert_t messwert;
-	char input[500], tmpStr [1000];
+	//char input[500];
+	char tmpStr [1000];
 	double input_d = 0.;
 	int i = 0, valid = 0;
 	

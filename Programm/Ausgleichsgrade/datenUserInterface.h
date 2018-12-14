@@ -2,6 +2,10 @@
 author: Raupe
 
 Info:
+Headerdatei der Benutzerschnittstelle. Die Konsolenanwendung interagiert
+über die Eingabe von Ziffern mit dem Benutzer.
+Klassischerweise wird auch hier immer direkt die Referenz auf die gesamte 
+Messreihe übergeben
 */
 
 
@@ -54,6 +58,7 @@ Para: messreihe
 
 RetVal: status
 0: kein Fehler
+keine Anderen Rückgabewerte bis jetzt vorgesehen- Das Fehlerhandling findet intern statt
 */
 int datenManipulieren(messreihe_t *messreihe);
 #endif // !_datenManipulieren
