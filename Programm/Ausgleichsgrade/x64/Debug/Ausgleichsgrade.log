@@ -1,7 +1,2 @@
-﻿  Main.c
-  berechnung.c
-  datenImExport.c
-  datenUserInterface.c
-  help.c
-  Code wird generiert...
+﻿  datenImExport.c
   Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe

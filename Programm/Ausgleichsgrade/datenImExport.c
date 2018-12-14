@@ -60,30 +60,36 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 {
 	FILE* file;
 	messwert_t messwert;
-	//char  * p_zahlStr;
 	char buffer[100];
 	double zahlX, zahlY;
-	//char inChar;
 	int i, ret, anzahl = 0;
+
 	file = fopen("messreihe.ttj", "r");
 	system(CLS);
 	printf("Daten werden geladen\n");
-	//vorerst einfach überschreiben
 	if (!file)
 		perror("Fehlgeschlagen: ");
 	else {
 		ret = fscanf(file, "%s", buffer);
-		printf("Messreihe ge"str(_oe)"ffnet mit: %s ", buffer);
-		ret = fscanf(file, "%i", &anzahl);
-		printf("%i Messwerten\n", anzahl);
-		//Datenbereich vorbereiten
-		messreiheAllocate(anzahl, p_messreihe);
+		if (atof(buffer) == 0.0)
+		{
+			printf("Messreihe ge"str(_oe)"ffnet mit: %s ", buffer);
+			ret = fscanf(file, "%i", &anzahl);
+			printf("%i Messwerten\n", anzahl);
+
+			//Datenbereich vorbereiten
+			messreiheAllocate(anzahl, p_messreihe);
+		}
+		else
+			printf("Einlagerung von Fermddatei...\n");
 		i = 0;
 		while (ret != -1)
 		{
 			ret = fscanf(file, "%lf", &zahlX);
 			fgetc(file);
 			ret = fscanf(file, "%lf", &zahlY);
+			if (i + 1 > p_messreihe->anzahlMesswerte)	//Falls die Anzahl der vohandenen Werte manipuliert wurde
+				messreihePruefen(p_messreihe);
 			if (ret != -1)
 			{
 				messwert.x = zahlX;
@@ -95,6 +101,7 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 		}
 
 	}
+	printf("Einlagerung abgeschlossen\n Bitte Taste dr"str(_ue)"cken\n");
 	getchar();
 	return 0;
 }
