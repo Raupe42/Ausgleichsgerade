@@ -115,6 +115,7 @@ int datenEinlesen(messreihe_t *p_messreihe)
 		aktMesswert = messwertEinlesen(wertNr, text);
 		aktMesswert.val = 1;
 	} while (aktMesswert.x != messwert1.x || aktMesswert.y != messwert1.y);
+	printf("Eingabe beendet\nBeliebige Taste dr"str(_ue)"cken\n");
 	getchar();
 	return 0;
 }
@@ -247,7 +248,7 @@ double doubleEinlesen()
 */
 double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 {
-	char input[50];
+	char input[101];
 	double input_d = 0.;
 	int i = 0, valid = 0;
 	do {
@@ -258,7 +259,8 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 		printf("%c:", wertKoord);
 
 		//printf("Wert %i:\n%c:", wertNr, wertKoord);
-		scanf("%s", input);
+		scanf("%100s", input);
+		while (getchar() != '\n');
 		input_d = atof(input);
 		//wenn atof fehlerhaft input_d = 0.0
 		//Fehler abfangen - aber Eingabe 0.0 zulassen
@@ -286,13 +288,16 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 
 		}
 	} while (valid == 0);
+
+
+
 	return input_d;
 }
 
 messwert_t messwertEinlesen(long wertNr, char introText[])
 {
 	messwert_t messwert;
-	char input[50], tmpStr [100];
+	char input[500], tmpStr [1000];
 	double input_d = 0.;
 	int i = 0, valid = 0;
 	

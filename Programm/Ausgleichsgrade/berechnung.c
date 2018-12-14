@@ -42,7 +42,7 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 	long double nenner;
 	char buff;
 	system(CLS);
-	printf("Men"str(_ue)" zur Berechnung.\n");
+	printf("Men"str(_ue)" zur Berechnung\n");
 	getchar();
 	printf("starte Berechnung\n");
 	nenner = berechneNenner(p_messdaten);
@@ -51,7 +51,7 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 	//printf("m * x + b = %g * x + %g", m, b);
 	printf("b = %g\n", b);
 	printf("m = %g\n", m);
-	printf("y = %g x + %g", m, b);
+	printf("y = %g x + %g\n", m, b);
 	while (getchar() != '\n');
 	printf("Soll eine Wertetabelle angezeigt werden? (y/n)\n");
 	buff = getchar();
@@ -154,16 +154,19 @@ Parameter: double m, b
 */
 void punkteEinerGeraden(double m, double b)
 {
-	long i, n;
-	double schrittw;
-	int stellenzahl;
+	long i, n = 1;
+	double schrittw = 1;
+	int stellenzahl = 1;
+	printf("Eine Wertetabelle der Gerade wird ausgegeben:\n");
 	printf("Wie viele Eintr"str(_ae)"ge sollen Angezeigt werden?\n");
 	scanf("%li", &n);
 	while (getchar() != '\n');
-	printf("Bei welchern Schittweite?\n");
+	if (n < 0)
+		n *= -1;
+	printf("Bei welcher Schrittweite?\n");
 	scanf("%lf", &schrittw);
 	while (getchar() != '\n');
-	printf("Mit welchen Stellenzahl?\n");
+	printf("Mit wie vielen Nachkommastellen?\n");
 	scanf("%i", &stellenzahl);
 	if (stellenzahl < 0)
 		stellenzahl *= -1;
@@ -174,8 +177,8 @@ void punkteEinerGeraden(double m, double b)
 		printf("Y = %.*lf * %.*lf + %.*lf = %.*lf\n",
 			stellenzahl, m, 
 			stellenzahl,(i * schrittw), 
-			stellenzahl, b,stellenzahl, 
-			m*(i*schrittw) + b);
+			stellenzahl, b,
+			stellenzahl, m*(i*schrittw) + b);
 	}
 	while (getchar()!= '\n');
 	return;

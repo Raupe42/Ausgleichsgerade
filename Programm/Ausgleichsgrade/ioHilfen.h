@@ -2,7 +2,7 @@
 author: Raupe
 
 Info:
-Allgemeine Hilfen zur vereinfachung des Ein-Ausgabehandlöings bei Konsolenanwendungen
+Allgemeine Hilfen zur vereinfachung des Ein-Ausgabehandlings bei Konsolenanwendungen
 */
 
 
