@@ -3,9 +3,9 @@ author: Raupe
 
 Info:
 Headerdatei der Benutzerschnittstelle. Die Konsolenanwendung interagiert
-über die Eingabe von Ziffern mit dem Benutzer.
-Klassischerweise wird auch hier immer direkt die Referenz auf die gesamte 
-Messreihe übergeben
+Ã¼ber die Eingabe von Ziffern mit dem Benutzer.
+Klassischerweise wird auch hier immer direkt die Referenz auf die Gesamte 
+Messreihe Ã¼bergeben
 */
 
 
@@ -49,16 +49,16 @@ int datenAusgeben(messreihe_t *messreihe);
 #define _datenManipulieren
 /*
 Unterfunktion zum Manipulieren einzelner Messwerte
-Durch ein neues Untermenü ist die Manipulation von Datensätzen
-möglich.
-Dazu zählt:
-- das Ändern von Werten
-- löschen von Wertepaaren
+Durch ein neues Untermenï¿½ ist die Manipulation von Datensï¿½tzen
+mÃ¶glich.
+Dazu zÃ¤hlt:
+- das Ã„ndern von Werten
+- lÃ¶schen von Wertepaaren
 Para: messreihe
 
 RetVal: status
 0: kein Fehler
-keine Anderen Rückgabewerte bis jetzt vorgesehen- Das Fehlerhandling findet intern statt
+keine Anderen RÃ¼ckgabewerte bis jetzt vorgesehen- Das Fehlerhandling findet intern statt
 */
 int datenManipulieren(messreihe_t *messreihe);
 #endif // !_datenManipulieren

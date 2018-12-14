@@ -2,6 +2,7 @@
 author: Raupe
 
 Info:
+Headerdatei des Im- und Exportmoduls
 */
 
 
@@ -15,7 +16,7 @@ Info:
 #ifndef _datenSpeichern
 #define _datenSpeichern
 /*
-Unterfunktion zum speichern der Daten in eine Datei
+Unterfunktion zum Speichern der Daten in eine Datei
 Para: messreihe
 
 RetVal: status
@@ -27,7 +28,7 @@ int datenSpeichern(messreihe_t *messreihe);
 #ifndef _datenLaden
 #define _datenLaden
 /*
-Unterfunktion zum lesen der Daten aus einer Datei
+Unterfunktion zum Lesen der Daten aus einer Datei
 Para: messreihe
 
 RetVal: status

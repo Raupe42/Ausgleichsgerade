@@ -2,8 +2,8 @@
 author: Raupe
 
 Info:
-Dieses Modul führt die Berechnung der Kennzahlen durch
-Nach außen ist nur die Hauptfunktion sichtbar.
+Dieses Modul fÃ¼hrt die Berechnung der Kennzahlen durch
+Nach auÃŸen ist nur die Hauptfunktion sichtbar.
 */
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -68,7 +68,7 @@ int berechnungsmenue(messreihe_t *p_messdaten)
 Parameter: p-messreihe: die Messreihe
 nenner: der zuvor berechnete Nenner als long double
 Die angewendete Formel entsprocht der Vorlage
-Rückgabewert: b als double Wert
+RÃ¼ckgabewert: b als double Wert
 */
 double berechneY_Achsenabschnitt(messreihe_t* p_messreihe, long double nenner)
 {
@@ -81,7 +81,7 @@ double berechneY_Achsenabschnitt(messreihe_t* p_messreihe, long double nenner)
 Parameter: p-messreihe: die Messreihe
 nenner: der zuvor berechnete Nenner als long double
 Die angewendete Formel entsprocht der Vorlage
-Rückgabewert: m als double Wert
+RÃ¼ckgabewert: m als double Wert
 */
 double berechneSteigung(messreihe_t* p_messreihe, long double nenner)
 {
@@ -93,7 +93,7 @@ double berechneSteigung(messreihe_t* p_messreihe, long double nenner)
 /*
 Parameter:p-messreihe: die Messreihe
 Berechnung des Nenners nach gegebener Formel
-Rückgabwert: Nenner des Bruches als long double
+RÃ¼ckgabwert: Nenner des Bruches als long double
 */
 long double berechneNenner(messreihe_t* p_messreihe)
 {
@@ -106,8 +106,8 @@ long double berechneNenner(messreihe_t* p_messreihe)
 /*
 Parameter: p-messreihe: die Messreihe
 sumFunk: Zeiger euf eine der Berechnungsfunktionen
-So wird die Summe einer Variablen Berechnungsvorschrift über
-die gültigen Messwerte gebildet
+So wird die Summe einer Variablen Berechnungsvorschrift ï¿½ber
+die gÃ¼ltigen Messwerte gebildet
 */
 long double berechneSumme(messreihe_t* p_messreihe, long double (*sumFunk)(messwert_t* p_messwert))
 {
@@ -150,9 +150,9 @@ long double sumXY(messwert_t* p_messwert)
 }
 
 /*
-Diese Funktion gibt in Abhängigkeit von Benutzereingaben
+Diese Funktion gibt in AbhÃ¤ngigkeit von Benutzereingaben
 Punkte einer Geraden aus
-Rückgabewert: void
+RÃ¼ckgabewert: void
 Parameter: double m, b
 	wie in der allg. Geradengleichung m*x+b
 */

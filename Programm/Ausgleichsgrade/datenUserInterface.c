@@ -2,7 +2,7 @@
 author: Raupe
 
 Info:
-Modul zum einlesen, anzeigen, manipulieren und speichern von Datensätzen
+Modul zum einlesen, anzeigen, manipulieren und speichern von Datensï¿½tzen
 */
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -10,11 +10,11 @@ Modul zum einlesen, anzeigen, manipulieren und speichern von Datensätzen
 #define _OPEN_SYS_ITOA_EXT
 
 //includes
-	//erternen Abhängigkeiten
+	//externen AbhÃ¤ngigkeiten
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-	//internen Abhängigkeiten
+	//internen AbhÃ¤ngigkeiten
 #include "datenUserInterface.h"
 #include "ioHilfen.h"
 #include "datenHandling.h"
@@ -28,9 +28,7 @@ int main(void)
 
 //interne Prototypen
 long findePlatz(messreihe_t *p_messreihe);
-//double doubleEinlesen();
 messwert_t messwertEinlesen(long wertNr, char introText[]);
-//double einlesen(long wertNr, char introText[], char zweiterText [] );
 double einlesen(long wertNr, char introText[], char wertKoord, char text2[]);
 
 int datenAusgeben(messreihe_t *p_messreihe)
@@ -74,9 +72,7 @@ int datenAusgeben(messreihe_t *p_messreihe)
 	}
 	printf("Alle Messwerte ausgegeben...\n");
 	getchar();
-	
 
-	//getchar();
 	return 0;
 }
 
@@ -134,7 +130,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 		printf("(4) Datensatz l"str(_oe)"schen\n");
 		printf("\n");
 		printf("(0) Hauptmen"str(_ue)"\n");
-		// mehrere Datensätzen löschen ??
+		// mehrere Datensï¿½tzen lï¿½schen ??
 		scanf("%i", &auswahl); while (buff = getchar() != '\n');
 		switch (auswahl)
 		{
@@ -153,13 +149,10 @@ int datenManipulieren(messreihe_t *p_messreihe)
 			printf("Bitte WertNr. eingeben\nBeenden mit Wert-Nr. -1\n");
 			do {
 				scanf("%i", &eingabeLong); 
-				//while (buff = getchar() != '\n');
-				/*if (buff != '\n')
-					eingabeLong = -1.;*/
 				while (buff = getchar() != '\n')
 				{
 					if (buff != '\n')
-						eingabeLong = -1;		//Aktuell führt eine Fehleingabe zur beenmdung des Untermenues
+						eingabeLong = -1;		//Aktuell fÃ¼hrt eine Fehleingabe zur beendung des UntermenÃ¼s
 				}
 				if (eingabeLong >= 0) {
 					if (eingabeLong < (p_messreihe->kapazitaetMessreihe))
@@ -179,7 +172,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 				scanf("%i", &eingabeLong); while (buff = getchar() != '\n')
 				{
 					if (buff != '\n')
-						eingabeLong = -1;		//Aktuell führt eine Fehleingabe zur beenmdung des Untermenues
+						eingabeLong = -1;		//Aktuell fï¿½hrt eine Fehleingabe zur beendung des UntermenÃ¼s
 				}
 				if (eingabeLong >= 0) {
 					if (eingabeLong < (p_messreihe->kapazitaetMessreihe))
@@ -205,7 +198,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 				scanf("%i", &eingabeLong); while (buff = getchar() != '\n')
 				{
 					if (buff != '\n')
-						eingabeLong = -1;		//Aktuell führt eine Fehleingabe zur beenmdung des Untermenues
+						eingabeLong = -1;		//Aktuell fï¿½hrt eine Fehleingabe zur beendung des UntermenÃ¼s
 				}
 				if (eingabeLong >= 0) {
 					if (eingabeLong < (p_messreihe->kapazitaetMessreihe))
@@ -237,15 +230,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 
 
 //lokale Funktionen
-/*
-double doubleEinlesen()
-{
-	double retVal = 0.;
-	char buff = '\n';
-	scanf("%lf", &retVal);
-	return retVal;
-}
-*/
+
 double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 {
 	char input[101];
@@ -257,17 +242,12 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 		printf("Wert %i\n", wertNr);
 		printf("%s", text2);
 		printf("%c:", wertKoord);
-
-		//printf("Wert %i:\n%c:", wertNr, wertKoord);
 		scanf("%100s", input);
 		while (getchar() != '\n');
 		input_d = atof(input);
-		//wenn atof fehlerhaft input_d = 0.0
-		//Fehler abfangen - aber Eingabe 0.0 zulassen
 		valid = 1;
 		if (!input_d)
 		{
-
 			i = 0;
 			while (input[i] != '\0')
 			{
@@ -294,19 +274,17 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 	return input_d;
 }
 
+
 messwert_t messwertEinlesen(long wertNr, char introText[])
 {
 	messwert_t messwert;
-	//char input[500];
 	char tmpStr [1000];
 	double input_d = 0.;
 	int i = 0, valid = 0;
 	
 	strcpy(tmpStr, "");
 	messwert.x = einlesen(wertNr, introText, 'X', tmpStr);
-	//sprintf(tmpStr, "X:%g\n", input_d);
 	sprintf(tmpStr, "X:%g\n", messwert.x);
-	//messwert.y = doubleEinlesen();
 	messwert.y = einlesen(wertNr, introText, 'Y', tmpStr);
 	messwert.val = 1;
 	return messwert;
@@ -315,7 +293,7 @@ messwert_t messwertEinlesen(long wertNr, char introText[])
 long findePlatz(messreihe_t *p_messreihe)
 {
 	long aktObj = 0;
-	//gültigen speicherplatz suchen und ersten Wert reinschreiben
+	//gÃ¼ltigen speicherplatz suchen und Datensatz reinschreiben
 	messreihePruefen(p_messreihe);
 	while ((*p_messreihe->messreihe + aktObj)->val == 1)
 		aktObj++;

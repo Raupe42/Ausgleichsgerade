@@ -1,17 +1,17 @@
 /*
 author: Raupe
 In diesem Modul wird die Messreihe im Heap verwaltet
-Hier wird initialisiert über malloc,
+Hier wird initialisiert Ã¼ber malloc,
 realloziiert mit realloc und ggf. der Speicher mit free freigegeben
 
-Desweiteren gibt es eine Funktion zur automatisierten Prüfung der Speicherkapazität
+Desweiteren gibt es eine Funktion zur automatisierten PrÃ¼fung der SpeicherkapazitÃ¤t
 
 Info:
 */
 
 
 //includes
-	//von externen Abhängigkeiten
+	//von externen Abhï¿½ngigkeiten
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -32,13 +32,13 @@ int main(void)
 /*
 Parameter:
 anzahl: Anzahl der messwert_t die aufgenommen werden sollen
-	bei Werten <= 0 wird die bestehnde Messreihe gelöscht
+	bei Werten <= 0 wird die bestehnde Messreihe gelÃ¶scht
 struct messwert_t messreihe: Zeiger auf die bestehende Messreihe
-	wird NULL übergeben, wird eine neue Messreihe angelegt
+	wird NULL Ã¼bergeben, wird eine neue Messreihe angelegt
 
 
 
-Rückgabewert: int
+RÃ¼ckgabewert: int
 Status des Aufrufs
 -1: Fehler
 0: Messreihe leer, kein Fehler
@@ -48,7 +48,7 @@ Status des Aufrufs
 int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 
 {
-	//lokal für lesabrkeit
+	//lokal fÃ¼r lesbarbkeit
 	messwert_t *messreihe = (messwert_t*) p_messreihe->messreihe;
 
 	int retVal = -1;
@@ -78,18 +78,18 @@ int messreiheAllocate(long neueAnzahl, messreihe_t *p_messreihe)
 		retVal = -1;
 
 
-	//lokal zrück speichern
+	//lokal zrÃ¼ck speichern
 	p_messreihe->messreihe = (messreihe_t*) messreihe;
 	return retVal;
 }
 
 /*Verwaltung des Messreihenspeichers
-der benötigte Speicherplatz im Hauptspeicher soll
+der benÃ¶tigte Speicherplatz im Hauptspeicher soll
 relativ optimal dimensioniert werden
 
 Parameter: p_messreihe
-Alle Werte werden als InPlaceSubstitution ggf. geändert
-Rückgabewert Status:
+Alle Werte werden als InPlaceSubstitution ggf. geï¿½ndert
+RÃ¼ckgabewert Status:
 0: kein Fehler
 */
 
@@ -111,8 +111,8 @@ int messreihePruefen(messreihe_t *p_messreihe)
 		}
 	}
 
-	//prüfe Messreihe
-	if (kapazitaetMessreihe <= anzahlMesswerte)	//= besonders wichtig für kapa, anzahl == 0
+	//prÃ¼fe Messreihe
+	if (kapazitaetMessreihe <= anzahlMesswerte)	//= besonders wichtig fÃ¼r kapa, anzahl == 0
 	{
 		int state = messreiheAllocate(anzahlMesswerte + SPEICHERRESERVE, p_messreihe);
 		kapazitaetMessreihe = anzahlMesswerte + SPEICHERRESERVE;
@@ -126,7 +126,7 @@ int messreihePruefen(messreihe_t *p_messreihe)
 		kapazitaetMessreihe = anzahlMesswerte + SPEICHERRESERVE;
 	}
 
-	//rückschreiben der lokaldaten
+	//rÃ¼ckschreiben der lokaldaten
 	p_messreihe->anzahlMesswerte = anzahlMesswerte;
 	p_messreihe->kapazitaetMessreihe = kapazitaetMessreihe;
 	return 0;

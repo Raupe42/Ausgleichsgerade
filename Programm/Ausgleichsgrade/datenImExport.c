@@ -2,17 +2,17 @@
 author: Raupe
 
 Info:
-Modul zum einlesen, anzeigen, manipulieren und speichern von Datensätzen
+Modul zum Einlesen, Anzeigen, Manipulieren und Speichern von DatensÃ¤tzen
 */
 
 #define _CRT_SECURE_NO_WARNINGS
 
 //includes
-//erternen Abhängigkeiten
+//externen AbhÃ¤ngigkeiten
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//internen Abhängigkeiten
+//internen AbhÃ¤ngigkeiten
 #include "datenImExport.h"
 #include "ioHilfen.h"
 #include "datenHandling.h"
@@ -25,7 +25,7 @@ int main(void)
 #endif // !_MAIN
 
 /*
-Diese Funktion speicher die aktuelle Messreihe mit einer Zusatzinformation ab.
+Diese Funktion speichert die aktuelle Messreihe mit einer Zusatzinformation ab.
 Es wird die Anzahl der Messwerte mit abgelegt.
 */
 int datenSpeichern(messreihe_t *p_messreihe)
@@ -52,9 +52,9 @@ int datenSpeichern(messreihe_t *p_messreihe)
 }
 
 /*
-Diese Funktion lädt den Inhalt einer Backup Datei.
-Die geladenen Werte überschreiben bereits existierende Werte.
-Es wird von der Initalen Informationszeile übner die Anzahl der Werte ausgegangen
+Diese Funktion lÃ¤dt den Inhalt einer Backup Datei.
+Die geladenen Werte Ã¼berschreiben bereits existierende Werte.
+Es wird von der initialen Informationszeile die Anzahl der Werte ermittelt
 */
 int datenLadenErsetzend(messreihe_t *p_messreihe)
 {

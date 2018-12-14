@@ -2,8 +2,8 @@
 author: Raupe
 
 Info:
-Dies ist die Header-Datei für die Berechnungsfunktion.
-Die gesamte Funktionalität ist Hard-Coded und nicht von außen beeinflussbar.
+Dies ist die Header-Datei fÃ¼r die Berechnungsfunktion.
+Die gesamte FunktionalitÃ¤t ist Hard-Coded und nicht von auï¿½en beeinflussbar.
 
 */
 
@@ -19,10 +19,10 @@ Die gesamte Funktionalität ist Hard-Coded und nicht von außen beeinflussbar.
 
 
 /*
-Aufruf für das Berechnungsmenü.
-Die Benutzinteraktion wird dirket durch das Menü durchgeführt.
+Aufruf fÃ¼r das BerechnungsmenÃ¼.
+Die Benutzinteraktion wird dirket durch das MenÃ¼ durchgefÃ¼hrt.
 Parameter: p_messdaten: Ein Zeiger auf die Messdaten
-Rückgabewert: int Status: es kann ausgewertet werden, ob die Funktion fertig bearbeitet wurde
-Rückgabe: 0 Aufruf beendet
+RÃ¼ckgabewert: int Status: es kann ausgewertet werden, ob die Funktion fertig bearbeitet wurde
+RÃ¼ckgabe: 0 Aufruf beendet
 */
 int berechnungsmenue(messreihe_t *p_messdaten);

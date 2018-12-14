@@ -27,8 +27,6 @@ void printHelp()
 	printf("hier wird die Hilfe stehen... \n \n \n \n");
 
 	printf("Beliebige Taste dr"str(_ue)"cken");
-	//wprintf(L"Beliebige Taste drücken");
-	//printf("Beliebige Taste drücken");
 	getchar();
 	return;
 }

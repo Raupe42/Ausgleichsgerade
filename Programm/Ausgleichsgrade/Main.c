@@ -3,11 +3,11 @@ author: Raupe
 
 Info:
 Dies ist die Hauptdatei dieser Anwendung.
-Die Funktionalität besteht in der Berechnung einer Ausgleichsgeraden
-Die Dafür benötigten Werte können eingelesen, gesicher, manipuliert und importiert werden.
+Die FunktionalitÃ¤t besteht in der Berechnung einer Ausgleichsgeraden
+Die DafÃ¼r benÃ¶tigten Werte kÃ¶nnen eingelesen, gesicher, manipuliert und importiert werden.
 Anforderungsprofil und weitere Informationen sind in der Begelitdokumentation enthalten.
 
-Bei Darstellungsschwierigkeiten für z.B. Umlaute ist die ioHilfen.h zu betrachten.
+Bei Darstellungsschwierigkeiten fÃ¼r z.B. Umlaute ist die ioHilfen.h zu betrachten.
 
 */
 
@@ -18,7 +18,7 @@ Bei Darstellungsschwierigkeiten für z.B. Umlaute ist die ioHilfen.h zu betrachte
 
 
 //includes
-	//von externen Abhängigkeiten
+	//von externen Abhï¿½ngigkeiten
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -52,7 +52,7 @@ int main(void)
 	messwerte.anzahlMesswerte = 10;
 	messwerte.kapazitaetMessreihe = 0;
 	messreihe_t *p_messwerte = &messwerte;
-	int i;	//Hilfsvariable für Zählschleifen usw.
+	int i;	//Hilfsvariable fÃ¼r ZÃ¤hlschleifen usw.
 
 
 	setlocale(LC_ALL, "de_DE");	//Erfordert alternative Umlautbehandlung
@@ -165,9 +165,9 @@ int main(void)
 }
 
 //int menue ()
-/* Verwaltung des Programmmenüs - der Benutzer wählt mit eingabe auf der Konsole
-die Funktionalitäten aus
-Der Rückgabewert ist die ausgewählte Funktionalität
+/* Verwaltung des ProgrammmenÃ¼s - der Benutzer wÃ¤hlt mit eingabe auf der Konsole
+die FunktionalitÃ¤ten aus
+Der RÃ¼ckgabewert ist die ausgewï¿½hlte FunktionalitÃ¤t
 (1) Daten aufnehmen
 (2) Daten ausgeben
 (3) Daten korrigieren

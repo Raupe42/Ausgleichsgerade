@@ -2,13 +2,13 @@
 author: Raupe
 
 Info:
-Diese Header-Datei definiert die maßgebliche Datenstruktur dieser Anwendung.
-Zur besseren Übersicht ist hierzu eine Begleitdokumentation angefertigt worden.
-Für ein effizientes Handling innerhalb des Programms mit übersichtlichen 
-Aufrugen werden hier die Strukturen über typedef erstellt
+Diese Header-Datei definiert die maï¿½gebliche Datenstruktur dieser Anwendung.
+Zur besseren Ãœbersicht ist hierzu eine Begleitdokumentation angefertigt worden.
+FÃ¼r ein effizientes Handling innerhalb des Programms mit Ã¼bersichtlichen 
+Aufrugen werden hier die Strukturen ï¿½ber typedef erstellt
 Die zentrale Referenz auf die Datenreihe darf nicht verloren gehen und sollte 
 z.B. in der MAIN-Funktion verwaltet werden.
-Die Struktur ist für "call by name" optimiert- also für Zeiger-Übergaben
+Die Struktur ist fÃ¼r "call by name" optimiert- also fÃ¼r Zeiger-Ãœbergaben
 
 */
 
@@ -16,7 +16,7 @@ Die Struktur ist für "call by name" optimiert- also für Zeiger-Übergaben
 #define _messdaten_t
 /*
 x,y Koordinaten des Messwertes
-val für Gültigkeit ('1': gültig; '0' oder andere: ungültig
+val fï¿½r Gï¿½ltigkeit ('1': gï¿½ltig; '0' oder andere: ungï¿½ltig
 */
 typedef struct struct_messwert {
 	double x;
