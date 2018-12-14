@@ -24,6 +24,9 @@ int main(void)
 }
 #endif // !_MAIN
 
+//lokale Prototypen
+char* eingabeStr(char * path);
+
 /*
 Diese Funktion speichert die aktuelle Messreihe mit einer Zusatzinformation ab.
 Es wird die Anzahl der Messwerte mit abgelegt.
@@ -32,9 +35,11 @@ int datenSpeichern(messreihe_t *p_messreihe)
 {
 	FILE* file;
 	long i;
+	char str[256];
 	system(CLS);
 	printf("Daten werden gesichert...\n");
-	file = fopen("messreihe.ttj", "w");
+	//file = fopen("messreihe.ttj", "w");
+	file = fopen(eingabeStr(str), "w");
 	if (!file)
 		perror("Fehlgeschlagen: ");
 	else {
@@ -47,6 +52,7 @@ int datenSpeichern(messreihe_t *p_messreihe)
 		fclose(file);
 		printf("Abgeschlossen...\n");
 	}
+	while (getchar() != '\n');
 	getchar();
 	return 0;
 }
@@ -60,12 +66,13 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 {
 	FILE* file;
 	messwert_t messwert;
-	char buffer[100];
+	char buffer[100], str[256];
 	double zahlX, zahlY;
 	int i, ret, anzahl = 0;
-
-	file = fopen("messreihe.ttj", "r");
+	
 	system(CLS);
+	//file = fopen("messreihe.ttj", "r");
+	file = fopen(eingabeStr(str), "r");
 	printf("Daten werden geladen\n");
 	if (!file)
 		perror("Fehlgeschlagen: ");
@@ -99,9 +106,28 @@ int datenLadenErsetzend(messreihe_t *p_messreihe)
 				i++;
 			}
 		}
-
+		fclose(file);
+		printf("Einlagerung abgeschlossen\n");
 	}
-	printf("Einlagerung abgeschlossen\n Bitte Taste dr"str(_ue)"cken\n");
+	printf(" Bitte Taste dr"str(_ue)"cken\n");
+	while (getchar()!= '\n');
 	getchar();
 	return 0;
+}
+
+/*
+Einlesen eines Dateinpfades/ -namens 
+Die Eingabe wird in Form einer InPlace-Substitution
+weiter gegeben
+256 Felder Array vorsehen - mehr kann Windows auch nicht :P
+Rückgabewert = Parameterwert
+*/
+char* eingabeStr(char * path)
+{
+	printf("Bitte Dateinamen/ Pfad angeben:\n");
+	printf("(\"0\" f"str(_ue)"r Standardwert)\n");
+	scanf("%255[^\n]", path);	// Eine fehlerhafte Eingaba hat die gleiche Wirkung
+	if (!strcmp("0", path))
+		strcpy(path, "messreihe.ttj");
+	return path;
 }
