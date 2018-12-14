@@ -53,9 +53,6 @@
     <ClInclude Include="ioHilfen.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="messreihe.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>

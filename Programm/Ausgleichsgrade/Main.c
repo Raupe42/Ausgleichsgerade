@@ -2,8 +2,12 @@
 author: Raupe
 
 Info:
-Dies ist die Hauptdatei ...
+Dies ist die Hauptdatei dieser Anwendung.
+Die Funktionalität besteht in der Berechnung einer Ausgleichsgeraden
+Die Dafür benötigten Werte können eingelesen, gesicher, manipuliert und importiert werden.
+Anforderungsprofil und weitere Informationen sind in der Begelitdokumentation enthalten.
 
+Bei Darstellungsschwierigkeiten für z.B. Umlaute ist die ioHilfen.h zu betrachten.
 
 */
 
@@ -22,7 +26,7 @@ Dies ist die Hauptdatei ...
 
 	//von eigenen Modulen
 #define MAIN
-#include "main.h"
+#include "messreihe.h"
 #include "help.h"
 #include "datenHandling.h"
 #include "datenImExport.h"
@@ -31,7 +35,7 @@ Dies ist die Hauptdatei ...
 #include "ioHilfen.h"
 
 //globale typedefs
-
+//siehe mesreihe.h
 
 //Prototypen
 int menue();

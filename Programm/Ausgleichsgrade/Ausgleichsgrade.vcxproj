@@ -129,7 +129,6 @@
     <ClInclude Include="datenUserInterface.h" />
     <ClInclude Include="help.h" />
     <ClInclude Include="ioHilfen.h" />
-    <ClInclude Include="main.h" />
     <ClInclude Include="messreihe.h" />
   </ItemGroup>
   <ItemGroup>
