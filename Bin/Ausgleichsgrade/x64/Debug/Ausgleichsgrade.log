@@ -1,0 +1,10 @@
+﻿  berechnung.c
+  datenHandling.c
+c:\users\jensh\documents\ausgleichsgerade\bin\ausgleichsgrade\datenhandling.c(82): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messreihe_t *" unterschiedlich
+  datenImExport.c
+  datenUserInterface.c
+  help.c
+  Main.c
+c:\users\jensh\documents\ausgleichsgerade\bin\ausgleichsgrade\main.c(55): warning C4101: "i": Unreferenzierte lokale Variable
+  Code wird generiert...
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\Ausgleichsgerade\Bin\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
