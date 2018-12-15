@@ -116,7 +116,7 @@ int datenEinlesen(messreihe_t *p_messreihe)
 		aktObj = findePlatz(p_messreihe);
 		wertNr++;
 		sprintf(text, "Messwert 1 X=%g, Y=%g", messwert1.x, messwert1.y);
-		sprintf(tmpStr, "      (Erneut einegeben f"str(_ue)"r Eingabeende)\n");
+		sprintf(tmpStr, "      (Erneut eingeben f"str(_ue)"r Eingabeende)\n");
 		strcat(text, tmpStr);
 		aktMesswert = messwertEinlesen(wertNr, text);
 		aktMesswert.val = 1;
@@ -269,7 +269,7 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 			{
 				if (i == 0 && input[i] != '0')
 					valid = 0;
-				if (i == 1 && input[i] != '.')
+				if ((i == 1 && input[i] != '.' )||( i == 1 && input [i] != ','))
 					valid = 0;
 				if (input[i] != '0')
 					valid = 0;
