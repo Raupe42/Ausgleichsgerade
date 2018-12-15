@@ -47,7 +47,8 @@ int datenSpeichern(messreihe_t *p_messreihe)
 		for (i = 0; i < (p_messreihe->kapazitaetMessreihe); i++)
 		{
 			if ((*p_messreihe->messreihe + i)->val == 1)
-			fprintf(file, "%lf, %lf\n", (*p_messreihe->messreihe + i)->x, (*p_messreihe->messreihe + i)->y);
+			//fprintf(file, "%lf, %lf\n", (*p_messreihe->messreihe + i)->x, (*p_messreihe->messreihe + i)->y);
+			fprintf(file, "%lf %lf\n", (*p_messreihe->messreihe + i)->x, (*p_messreihe->messreihe + i)->y);
 		}
 		fclose(file);
 		printf("Abgeschlossen...\n");

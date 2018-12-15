@@ -18,11 +18,19 @@ Modul zum einlesen, anzeigen, manipulieren und speichern von Datens�tzen
 #include "datenUserInterface.h"
 #include "ioHilfen.h"
 #include "datenHandling.h"
+#include "messreihe.h"
 
 #ifndef _MAIN
 int main(void)
 {
-
+	messreihe_t dummyDaten;
+	dummyDaten.messreihe = NULL;
+	dummyDaten.kapazitaetMessreihe = 0;
+	dummyDaten.anzahlMesswerte = 0;
+	messreiheAllocate(100, &dummyDaten);
+	datenEinlesen(&dummyDaten);
+	datenAusgeben(&dummyDaten);
+	datenManipulieren(&dummyDaten);
 }
 #endif // !_MAIN
 
@@ -231,6 +239,10 @@ int datenManipulieren(messreihe_t *p_messreihe)
 
 //lokale Funktionen
 
+#ifndef _UserInterfaceEinlesen
+#define _UserInterfaceEinlesen
+
+
 double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 {
 	char input[101];
@@ -273,6 +285,10 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 
 	return input_d;
 }
+#endif // !_UserInterfaceEinlesen
+
+#ifndef _UserInterfaceMesswEinlesen
+#define _UserInterfaceMesswEinlesen
 
 
 messwert_t messwertEinlesen(long wertNr, char introText[])
@@ -289,7 +305,10 @@ messwert_t messwertEinlesen(long wertNr, char introText[])
 	messwert.val = 1;
 	return messwert;
 }
+#endif // !_UserInterfaceMesswEinlesen
 
+#ifndef _UserInterfaceFindePlatz
+#define _UserInterfaceFindePlatz
 long findePlatz(messreihe_t *p_messreihe)
 {
 	long aktObj = 0;
@@ -300,4 +319,4 @@ long findePlatz(messreihe_t *p_messreihe)
 
 	return aktObj;
 }
-
+#endif // !_UserInterfaceFindePlatz
