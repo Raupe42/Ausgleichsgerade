@@ -68,7 +68,7 @@ int datenAusgeben(messreihe_t *p_messreihe)
 			{
 				if ((*p_messreihe->messreihe + i)->val == 1)
 				{
-					printf("%i:x = %g, y= %g\n", i, (*p_messreihe->messreihe + i)->x, (*p_messreihe->messreihe + i)->y);
+					printf("%li:x = %g, y= %g\n", i, (*p_messreihe->messreihe + i)->x, (*p_messreihe->messreihe + i)->y);
 					nAusgegeben++;
 				}
 			}
@@ -139,7 +139,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 		printf("\n");
 		printf("(0) Hauptmen"str(_ue)"\n");
 		// mehrere Datens�tzen l�schen ??
-		scanf("%i", &auswahl); while (buff = getchar() != '\n');
+		scanf("%li", &auswahl); while (buff = getchar() != '\n');
 		switch (auswahl)
 		{
 		case 1:
@@ -156,7 +156,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 		case 2:
 			printf("Bitte WertNr. eingeben\nBeenden mit Wert-Nr. -1\n");
 			do {
-				scanf("%i", &eingabeLong); 
+				scanf("%li", &eingabeLong); 
 				while (buff = getchar() != '\n')
 				{
 					if (buff != '\n')
@@ -177,7 +177,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 		case 3:
 			printf("Bitte WertNr. eingeben\nBeenden mit Wert-Nr. -1\n");
 			do {
-				scanf("%i", &eingabeLong); while (buff = getchar() != '\n')
+				scanf("%li", &eingabeLong); while (buff = getchar() != '\n')
 				{
 					if (buff != '\n')
 						eingabeLong = -1;		//Aktuell f�hrt eine Fehleingabe zur beendung des Untermenüs
@@ -203,7 +203,7 @@ int datenManipulieren(messreihe_t *p_messreihe)
 		case 4:
 			printf("Bitte WertNr. eingeben\nBeenden mit Wert-Nr. -1\n");
 			do {
-				scanf("%i", &eingabeLong); while (buff = getchar() != '\n')
+				scanf("%li", &eingabeLong); while (buff = getchar() != '\n')
 				{
 					if (buff != '\n')
 						eingabeLong = -1;		//Aktuell f�hrt eine Fehleingabe zur beendung des Untermenüs
@@ -251,7 +251,7 @@ double einlesen(long wertNr, char introText [], char wertKoord, char text2[])
 	do {
 		system(CLS);
 		printf("%s", introText);
-		printf("Wert %i\n", wertNr);
+		printf("Wert %li\n", wertNr);
 		printf("%s", text2);
 		printf("%c:", wertKoord);
 		scanf("%100s", input);

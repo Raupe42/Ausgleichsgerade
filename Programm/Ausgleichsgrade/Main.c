@@ -95,6 +95,10 @@ int main(void)
 			break;
 		case 9: //Hilfe Anzeigen
 		// D E B U G
+#define NO_DEBUG_IN_MAIN
+#ifndef NO_DEBUG_IN_MAIN
+
+
 
 			while (funktionalitaet != 0)
 			{
@@ -154,6 +158,12 @@ int main(void)
 				}
 			}
 			break;
+#endif // !NO_DEBUG_IN_MAIN
+#ifdef NO_DEBUG_IN_MAIN
+			printf("Funktion Deaktiviert!\n");
+			getchar();
+#endif // NO_DEBUG_IN_MAIN
+
 		default:
 			printf("Falsche Eingabe \n");
 			break;
