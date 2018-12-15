@@ -1,0 +1,25 @@
+﻿  berechnung.c
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\berechnung.c(13): warning C4013: "system" undefiniert; Annahme: extern mit Rückgabetyp int
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\berechnung.c(14): warning C4013: "printf" undefiniert; Annahme: extern mit Rückgabetyp int
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\berechnung.c(15): warning C4013: "getchar" undefiniert; Annahme: extern mit Rückgabetyp int
+  datenHandling.c
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(65): warning C4047: "=": Anzahl der Dereferenzierungen bei "messwert_t (*)[0]" und "messwert_t *" unterschiedlich
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenhandling.c(39): warning C4047: "Initialisierung": Anzahl der Dereferenzierungen bei "messwert_t *" und "messwert_t (*)[0]" unterschiedlich
+  datenImExport.c
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(34): warning C4013: "system" undefiniert; Annahme: extern mit Rückgabetyp int
+  datenUserInterface.c
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(35): warning C4013: "system" undefiniert; Annahme: extern mit Rückgabetyp int
+  help.c
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\help.c(29): warning C4013: "system" undefiniert; Annahme: extern mit Rückgabetyp int
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\help.c(30): warning C4013: "printf" undefiniert; Annahme: extern mit Rückgabetyp int
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\help.c(33): warning C4013: "getchar" undefiniert; Annahme: extern mit Rückgabetyp int
+  Main.c
+  Code wird generiert...
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(45): warning C4716: "datenEinlesen": Muss einen Wert zurückgeben
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(53): warning C4716: "datenManipulieren": Muss einen Wert zurückgeben
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenuserinterface.c(38): warning C4716: "datenAusgeben": Muss einen Wert zurückgeben
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(37): warning C4716: "datenSpeichern": Muss einen Wert zurückgeben
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\datenimexport.c(44): warning C4716: "datenLaden": Muss einen Wert zurückgeben
+c:\users\jensh\documents\_ausgleichsgerade\programm\ausgleichsgrade\berechnung.c(16): warning C4716: "berechnungsmenue": Muss einen Wert zurückgeben
+  LINK : C:\Users\jensh\Documents\_Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe wurde nicht gefunden oder beim letzten inkrementellen Linkvorgang nicht erstellt; vollständiger Link wird durchgeführt.
+  Ausgleichsgrade.vcxproj -> C:\Users\jensh\Documents\_Ausgleichsgerade\Programm\Ausgleichsgrade\x64\Debug\Ausgleichsgrade.exe
