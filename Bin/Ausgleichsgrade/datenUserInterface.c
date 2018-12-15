@@ -14,6 +14,7 @@ Modul zum einlesen, anzeigen, manipulieren und speichern von Datens�tzen
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 	//internen Abhängigkeiten
 #include "datenUserInterface.h"
 #include "ioHilfen.h"
@@ -44,6 +45,7 @@ int datenAusgeben(messreihe_t *p_messreihe)
 	long i, anfangAusgabeBlock, nAusgegeben; 
 	int anzahlProBlock = -1;
 	char buff;
+	setlocale(LC_ALL, "de_DE");
 	system(CLS);
 	printf("Anahl der Messwerte bis Eingabetaste gefordert wird:\n");
 	printf("(0 f"str(_ue)"r geamte Ausgabe)\n");
@@ -91,7 +93,7 @@ int datenEinlesen(messreihe_t *p_messreihe)
 	long aktObj = 0;
 	char text[1000], tmpStr[500];
 	messwert_t messwert1, aktMesswert;
-
+	setlocale(LC_ALL, "de_DE");
 	//Kurzanleitung
 	printf("Dies ist die Dateneingabe.\n");
 	printf("Fortlaufende Eingabe der Punkte\n");
@@ -129,6 +131,8 @@ int datenManipulieren(messreihe_t *p_messreihe)
 	int i;
 	long auswahl = 42, eingabeLong;
 	char tempStr[500], buff;
+
+	setlocale(LC_ALL, "de_DE");
 	while (auswahl > 0) {
 		system(CLS);
 		printf("Datenmanipulation\n");
